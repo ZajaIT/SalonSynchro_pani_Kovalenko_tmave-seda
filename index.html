@@ -1,0 +1,1595 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Salon Synchro – kosmetická péče, masáže a specifická ošetření v České Lípě. Krása, zdraví a harmonie.">
+    <title>Salon Synchro | Naděžda Kovalenko</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #171316;
+            --purple: #432238;
+            --gold: #b78645;
+            --gold-light: #f4d6a5;
+            --cream: #fbf8f4;
+            --gold-gradient: linear-gradient(
+                110deg,
+                #a87436 0%,
+                #d9ad72 26%,
+                #f2d5a3 43%,
+                #b17c3e 67%,
+                #8e602d 100%
+            );
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 82px;
+}
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+    width: 100%;
+    height: 82px;
+    background: rgba(255,255,255,.96);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+        .nav-container {
+            max-width: 1320px;
+            height: 100%;
+            margin: auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    width: 230px;
+    height: auto;
+}
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            margin-left: auto;
+            margin-right: 55px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            transition: color .3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+    color: #a67438;
+}
+
+.nav-links a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #a67438;
+}
+
+        .nav-book {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 11px 20px;
+            border-radius: 50px;
+            background: linear-gradient(110deg,#bc8c51,#ffe8bd);
+            border: 1px solid #c6975a;
+            font-size: 14px;
+            letter-spacing: .4px;
+            white-space: nowrap;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .nav-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(155,105,54,.2);
+        }
+
+        .calendar-icon {
+            width: 27px;
+            height: 27px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.6;
+        }
+
+        .arrow {
+            font-size: 27px;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .menu-toggle {
+    display: none;
+}
+
+        .mobile-leaf {
+    display: none;
+}
+
+        .mobile-break {
+    display: none;
+}
+        .desktop-break {
+    display: inline;
+}
+
+        /* HERO */
+
+        .hero {
+            height: 497px;
+            width: 100%;
+            background-image: url("hero.png");
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+        }
+
+        .hero-inner {
+            max-width: 1320px;
+            height: 100%;
+            margin: auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .hero-content {
+            width: 580px;
+            padding-left: 10px;
+            margin-top: -3px;
+        }
+
+        .hero-eyebrow {
+            font-size: 15px;
+            letter-spacing: 6px;
+            font-weight: 400;
+            margin-bottom: 11px;
+        }
+
+        .hero-title {
+            display: flex;
+            flex-direction: column;
+            line-height: .98;
+        }
+
+        .hero-title .salon {
+            font-size: clamp(60px, 6vw, 85px);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-title .synchro {
+            display: inline-block;
+            width: fit-content;
+            font-size: clamp(60px, 6vw, 94px);
+            font-weight: 800;
+            letter-spacing: -3px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #b78645;
+        }
+
+        .hero-line {
+            width: 52px;
+            height: 2px;
+            background: #c99b5a;
+            margin: 15px 0 16px;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            line-height: 1.42;
+            font-weight: 500;
+            max-width: 535px;
+        }
+
+.hero-location {
+    display: block;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #60314e;
+}
+
+        .hero-button {
+            margin-top: 19px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            background: #60314e;
+            color: #fff;
+            border-radius: 50px;
+            padding: 20px 33px;
+            font-size: 16px;
+            font-weight: 400;
+            transition: background .3s, transform .3s;
+        }
+
+        .hero-button:hover {
+            background: var(--purple);
+            transform: translateY(-2px);
+        }
+
+
+/* ================================
+   O MNĚ – NOVÉ ROZLOŽENÍ
+================================ */
+
+.about {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background-color: #fbf8f4;
+    background-image:
+        url("leva.png"),
+        url("prava.png");
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-position:
+        left bottom,
+        right bottom;
+
+    background-size:
+        520px auto,
+        390px auto;
+
+    padding: 70px 24px;
+}
+
+.about-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1190px;
+    margin: 0 auto;
+    padding-left: 90px;
+    display: grid;
+    grid-template-columns: 260px 1px minmax(0, 1fr);
+    column-gap: 48px;
+    align-items: center;
+}
+
+/* LEVÁ ČÁST */
+
+.about-heading {
+    align-self: start;
+    padding-top: 16px;
+}
+
+.about-eyebrow {
+    display: block;
+    color: #b78645;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.about-heading h2 {
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 1.15;
+    color: #000000;
+}
+
+.about-line {
+    width: 70px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin-top: 25px;
+}
+
+/* SVISLÁ ZLATÁ LINKA */
+
+.about-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 235px;
+    background: #c79659;
+}
+
+/* PRAVÁ ČÁST S TEXTEM */
+
+.about-content {
+    min-width: 0;
+}
+
+.about-content p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.85;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .about {
+        padding: 65px 30px;
+    }
+
+    .about-container {
+        grid-template-columns: 220px 1px minmax(0, 1fr);
+        column-gap: 30px;
+    }
+
+    .about-heading h2 {
+        font-size: 48px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+/* MOBIL */
+
+@media (max-width: 650px) {
+    .about {
+    padding: 55px 22px;
+
+    background-size:
+        260px auto,
+        190px auto;
+
+    background-position:
+        left bottom,
+        right bottom;
+}
+
+    .about-container {
+    display: block;
+    padding-left: 0;
+}
+
+    .about-heading {
+        padding-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .about-heading h2 {
+        font-size: 46px;
+    }
+
+    .about-eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .about-line {
+        margin-top: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-divider {
+        display: none;
+    }
+
+    .about-content {
+    border-left: 1px solid #c79659;
+    padding-left: 20px;
+    text-align: center;
+}
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.85;
+        margin-bottom: 22px;
+    }
+
+    .desktop-break {
+    display: none;
+}
+}
+
+
+/* ================================
+   TMAVÝ PRUH S VÝHODAMI
+================================ */
+
+.benefits-strip {
+    background: linear-gradient(
+    110deg,
+    #432238 0%,
+    #60314e 50%,
+    #432238 100%
+);
+    padding: 34px 24px;
+    color: #fff;
+}
+
+.benefits-strip-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+}
+
+.benefits-strip-item {
+    text-align: center;
+    padding: 8px 25px;
+    border-right: 1px solid rgba(244, 214, 165, 0.3);
+}
+
+.benefits-strip-item:last-child {
+    border-right: none;
+}
+
+.benefits-strip-item h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #f4d6a5;
+    margin-bottom: 9px;
+}
+
+.benefits-strip-item p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #eee3e9;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .benefits-strip {
+        padding: 32px 20px;
+    }
+
+    .benefits-strip-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 25px;
+    }
+
+    .benefits-strip-item:nth-child(2) {
+        border-right: none;
+    }
+}
+
+/* MOBIL */
+
+@media (max-width: 520px) {
+    .benefits-strip {
+        padding: 28px 20px;
+    }
+
+    .benefits-strip-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .benefits-strip-item {
+        padding: 18px 10px;
+        border-right: none;
+        border-bottom: 1px solid rgba(244, 214, 165, 0.25);
+    }
+
+    .benefits-strip-item:last-child {
+        border-bottom: none;
+    }
+
+    .benefits-strip-item h3 {
+        font-size: 15px;
+    }
+
+    .benefits-strip-item p {
+        font-size: 12px;
+    }
+}
+
+        /* SLUŽBY */
+
+        .services {
+            background: #fff;
+            padding: 15px 0 16px;
+        }
+
+        .services-container {
+            max-width: 1406px;
+            margin: auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            position: relative;
+            height: 252px;
+            border: 1px solid #ead7bd;
+            border-radius: 11px;
+            overflow: hidden;
+            background-color: var(--cream);
+            background-size: cover;
+            background-position: center;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(75,48,30,.12);
+        }
+
+        .service-card.kosmetika {
+            background-image: url("kosmetika.png");
+        }
+
+        .service-card.masaze {
+            background-image: url("masaze.png");
+        }
+
+        .service-card.osetreni {
+            background-image: url("osetreni.png");
+        }
+
+        .service-content {
+            position: absolute;
+            left: 32px;
+            bottom: 20px;
+            right: 78px;
+            z-index: 1;
+        }
+
+        .service-content h2 {
+            font-size: 29px;
+            line-height: 1.12;
+            font-weight: 400;
+            letter-spacing: -.6px;
+        }
+
+        .service-line {
+            height: 1px;
+            width: 170px;
+            background: linear-gradient(90deg,#b98544 0 25%,#d8c5ae 25% 100%);
+            margin: 12px 0 13px;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            line-height: 1.45;
+            font-weight: 400;
+        }
+
+        .service-arrow {
+            position: absolute;
+            bottom: 19px;
+            right: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 27px;
+            font-weight: 300;
+            transition: transform .3s;
+        }
+
+        .service-card:hover .service-arrow {
+            transform: translateX(4px);
+        }
+
+        /* KONTAKTNÍ PRUH */
+
+        .contact-strip {
+    min-height: 142px;
+    background: #60314e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+        .contact-container {
+            max-width: 1320px;
+            width: 100%;
+            margin: auto;
+            padding: 20px 24px;
+            display: grid;
+            grid-template-columns: 1.05fr 1.4fr 1fr;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            min-height: 70px;
+        }
+
+        .contact-item.address {
+            border-left: 1px solid #96868c;
+            padding-left: 73px;
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: #171316;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-phone {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .contact-address {
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            color: #d3c4cb;
+        }
+
+        .contact-action {
+            border-left: 1px solid #96868c;
+            padding-left: 65px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .contact-book {
+            display: inline-flex;
+            align-items: center;
+            gap: 25px;
+            padding: 17px 30px;
+            border: 1px solid var(--gold-light);
+            border-radius: 50px;
+            font-size: 17px;
+            white-space: nowrap;
+            transition: background .3s;
+        }
+
+        .contact-book:hover {
+            background: rgba(212,169,107,.15);
+        }
+
+        /* MENŠÍ PC */
+
+        @media (max-width: 1250px) {
+            .nav-container {
+                gap: 18px;
+            }
+
+            .logo img {
+    width: 280px;
+}
+
+            .nav-links {
+                gap: 25px;
+                margin-right: 10px;
+            }
+
+            .hero-content {
+                width: 52%;
+            }
+
+            .hero-title .synchro {
+                font-size: clamp(48px, 6vw, 78px);
+            }
+
+            .hero-title .salon {
+                font-size: clamp(48px, 6vw, 75px);
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .service-content {
+                left: 22px;
+            }
+
+            .service-content h2 {
+                font-size: 25px;
+            }
+
+            .contact-item.address {
+                padding-left: 30px;
+            }
+
+            .contact-action {
+                padding-left: 30px;
+            }
+        }
+
+        /* MOBILNÍ ZÁKLAD – DETAILNĚ DOLADÍME PO PC */
+
+        @media (max-width: 900px) {
+           .navbar {
+    height: 68px;
+}
+
+.nav-container {
+    height: 68px;
+    min-height: 0;
+    padding: 0 18px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    display: none;
+}
+
+.nav-book {
+    order: 1;
+    padding: 9px 13px;
+    gap: 7px;
+    font-size: 11px;
+    letter-spacing: 0;
+}
+
+.nav-book .calendar-icon {
+    width: 19px;
+    height: 19px;
+}
+
+.nav-book .arrow {
+    font-size: 19px;
+}
+
+.nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    box-shadow: 0 12px 25px rgba(0,0,0,.08);
+
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height .35s ease, visibility .35s;
+}
+
+.nav-links.open {
+    max-height: 280px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    visibility: visible;
+}
+
+.nav-links a {
+    padding: 20px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee5df;
+    text-align: center;
+}
+
+.nav-links a:last-child {
+    border-bottom: none;
+}
+
+            .mobile-leaf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 0;
+    flex-shrink: 0;
+}
+
+.mobile-leaf img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.menu-toggle {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 10px 10px;
+    border: 0;
+    background: transparent;
+    color: #171316;
+    cursor: pointer;
+}
+
+.menu-text {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.menu-lines {
+    width: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.menu-lines span {
+    display: block;
+    height: 2px;
+    background: #171316;
+    transition: width .3s, transform .3s;
+}
+
+.menu-lines span:first-child {
+    width: 26px;
+}
+
+.menu-lines span:last-child {
+    width: 18px;
+}
+
+.menu-toggle.active .menu-lines span:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.menu-toggle.active .menu-lines span:last-child {
+    width: 26px;
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+            .hero {
+                min-height: 560px;
+                height: auto;
+                background-position: 25% center;
+            }
+
+            .hero-inner {
+                min-height: 560px;
+                justify-content: center;
+                padding: 40px 25px;
+            }
+
+            .hero-content {
+                width: 100%;
+                max-width: 530px;
+                padding: 25px;
+                background: rgba(255,255,255,.65);
+                border-radius: 12px;
+                text-align: center;
+            }
+
+            .hero-title {
+    align-items: center;
+}
+
+.hero-line {
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+
+            .hero-title .salon {
+                font-size: clamp(48px, 9vw, 75px);
+            }
+
+            .hero-title .synchro {
+                font-size: clamp(43px, 9vw, 75px);
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+                max-width: 560px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .contact-item.address,
+.contact-action {
+    border-left: none;
+    padding-left: 0;
+}
+
+.contact-item.address {
+    border-top: 1px solid #96868c;
+    padding-top: 22px;
+}
+
+.contact-action {
+    border-top: 1px solid #96868c;
+    padding-top: 22px;
+}
+
+            .contact-action {
+                justify-content: flex-start;
+            }
+
+            html {
+        scroll-padding-top: 68px;
+    }
+
+            .mobile-break {
+    display: inline;
+}
+
+.desktop-comma {
+    display: none;
+}
+        }
+
+        @media (max-width: 520px) {
+            .logo img {
+    width: min(280px, 75vw);
+}
+
+            .hero-eyebrow {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            .hero-title .salon {
+                font-size: 49px;
+            }
+
+            .hero-title .synchro {
+                font-size: 49px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-button {
+                font-size: 12px;
+                padding: 17px 22px;
+            }
+
+            .hero-location-separator {
+    display: none;
+}
+
+.hero-location-city {
+    display: block;
+}
+
+            .service-card {
+                height: 240px;
+            }
+
+            .service-content h2 {
+                font-size: 25px;
+            }
+
+            .service-content p {
+                font-size: 14px;
+            }
+
+            .contact-phone {
+                font-size: 21px;
+            }
+        }
+
+/* FOOTER */
+
+.footer {
+    background: #171316;
+    color: #fff;
+    padding: 24px;
+}
+
+.footer-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #c9c1c6;
+}
+
+.footer a {
+    color: #c9c1c6;
+    transition: color .3s;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+@media (max-width: 650px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer {
+        padding: 22px 15px;
+    }
+}
+
+/* MODAL – NÁHLED SLUŽEB */
+
+.service-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-modal.active {
+    display: flex;
+}
+
+.service-modal-box {
+    position: relative;
+    background: #fbf8f4;
+    border: 1px solid #d5b17b;
+    border-radius: 12px;
+    padding: 65px 45px 50px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 70px rgba(0,0,0,.25);
+}
+
+.service-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    background: none;
+    color: #432238;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.service-modal-close:hover {
+    color: #b78645;
+}
+
+.service-modal-label {
+    display: block;
+    color: #b78645;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+#serviceModalText {
+    color: #171316;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+    .service-modal-box {
+        padding: 60px 25px 40px;
+    }
+
+    #serviceModalText {
+        font-size: 17px;
+    }
+
+}
+
+/* MAPA POD KONTAKTEM */
+
+.contact-map {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 650px) {
+    .contact-map {
+        height: 200px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <nav class="nav-container" aria-label="Hlavní navigace">
+
+            <a href="#domu" class="logo" aria-label="Salon Synchro – domů">
+    <img src="logo.png" alt="Salon Synchro – Naděžda Kovalenko">
+</a>
+
+            <a href="#domu" class="mobile-leaf" aria-label="Salon Synchro – domů">
+    <img src="logo-listek.png" alt="">
+</a>
+
+            <div class="nav-links" id="mobileNav">
+    <a href="#domu">DOMŮ</a>
+    <a href="#sluzby">SLUŽBY</a>
+    <a href="#omne">O MNĚ</a>
+    <a href="#kontakt">KONTAKT</a>
+</div>
+
+            <a href="#kontakt" class="nav-book">
+                <svg class="calendar-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="16" rx="1"/>
+                    <path d="M7 2v6M17 2v6M3 10h18M7 14h2M12 14h2M17 14h2M7 18h2M12 18h2"/>
+                </svg>
+                OBJEDNAT SE
+                <span class="arrow">→</span>
+            </a>
+
+            <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Otevřít menu"
+    aria-expanded="false"
+    aria-controls="mobileNav"
+>
+    <span class="menu-text">MENU</span>
+    <span class="menu-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+    </span>
+</button>
+
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+        <section class="hero" id="domu">
+            <div class="hero-inner">
+                <div class="hero-content">
+
+                    <p class="hero-eyebrow">KRÁSA · ZDRAVÍ · HARMONIE</p>
+
+                    <h1 class="hero-title">
+                        <span class="salon">SALON</span>
+                        <span class="synchro">SYNCHRO</span>
+                    </h1>
+
+                    <div class="hero-line"></div>
+
+                    <p class="hero-description">
+    Kosmetická péče, masáže a další ošetření.
+    <span class="hero-location">
+    HOTEL OLYMPIA<span class="hero-location-separator"> | </span>
+    <span class="hero-location-city">ČESKÁ LÍPA</span>
+</span>
+</p>
+
+                    <a href="#sluzby" class="hero-button">
+                        OBJEVTE MOJE SLUŽBY
+                        <span class="arrow">→</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+
+<!-- PROČ SI VYBRAT SALON SYNCHRO -->
+<section class="benefits-strip">
+    <div class="benefits-strip-container">
+
+        <div class="benefits-strip-item">
+            <h3>Individuální přístup</h3>
+            <p>Ke každému zákazníkovi</p>
+        </div>
+
+        <div class="benefits-strip-item">
+            <h3>Odbornost a zkušenosti</h3>
+            <p>Neustálé vzdělávání</p>
+        </div>
+
+        <div class="benefits-strip-item">
+            <h3>Kvalitní produkty</h3>
+            <p>Ověřené zkušenostmi</p>
+        </div>
+
+        <div class="benefits-strip-item">
+            <h3>Příjemné prostředí</h3>
+            <p>Komfort a harmonie</p>
+        </div>
+
+    </div>
+</section>
+
+        <!-- SLUŽBY -->
+        <section class="services" id="sluzby">
+            <div class="services-container">
+
+                <a href="#" class="service-card kosmetika" data-preview="Tady bude proklik na kosmetiku.">
+                    <div class="service-content">
+                        <h2>KOSMETIKA</h2>
+                        <div class="service-line"></div>
+                        <p>Profesionální péče<br>o zdravou a krásnou pleť.</p>
+                    </div>
+                    <span class="service-arrow" aria-hidden="true">→</span>
+                </a>
+
+                <a href="#" class="service-card masaze" data-preview="Tady bude proklik na masáže.">
+                    <div class="service-content">
+                        <h2>MASÁŽE</h2>
+                        <div class="service-line"></div>
+                        <p>Uvolnění těla,<br>obnovení energie.</p>
+                    </div>
+                    <span class="service-arrow" aria-hidden="true">→</span>
+                </a>
+
+                <a href="#" class="service-card osetreni" data-preview="Tady bude proklik na specifická ošetření.">
+                    <div class="service-content">
+                        <h2>SPECIFICKÁ<br>OŠETŘENÍ</h2>
+                        <div class="service-line"></div>
+                        <p>Cílená péče podle potřeb<br>Vaší pleti i těla.</p>
+                    </div>
+                    <span class="service-arrow" aria-hidden="true">→</span>
+                </a>
+
+            </div>
+        </section>
+
+<!-- MODAL – NÁHLED SLUŽEB -->
+<div class="service-modal" id="serviceModal" aria-hidden="true">
+    <div class="service-modal-box" role="dialog" aria-modal="true" aria-labelledby="serviceModalText">
+
+        <button class="service-modal-close" type="button" aria-label="Zavřít okno">
+            &times;
+        </button>
+
+        <span class="service-modal-label">PŘIPRAVUJEME</span>
+
+        <p id="serviceModalText"></p>
+
+    </div>
+</div>
+
+<!-- DALŠÍ VÝHODY SALONU -->
+<section class="benefits-strip">
+    <div class="benefits-strip-container">
+
+        <div class="benefits-strip-item">
+            <h3>Osobní péče</h3>
+            <p>Mám ráda lidi a ráda o ně pečuji.</p>
+        </div>
+
+        <div class="benefits-strip-item">
+            <h3>Poradenství</h3>
+            <p>Nejen provádím, ale i poradím.</p>
+        </div>
+
+        <div class="benefits-strip-item">
+            <h3>Dárkové poukazy</h3>
+            <p>Možnost zakoupení dárkových poukazů</p>
+        </div>
+
+        <div class="benefits-strip-item">
+            <h3>Parkování zdarma</h3>
+            <p>Přímo před hotelem i v jeho areálu</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- O MNĚ -->
+<section class="about" id="omne">
+    <div class="about-container">
+
+        <div class="about-heading">
+            <span class="about-eyebrow">POZNEJTE MĚ</span>
+            <h2>O mně</h2>
+            <div class="about-line"></div>
+        </div>
+
+        <div class="about-divider"></div>
+
+        <div class="about-content">
+            <p>Jmenuji se <strong>Naděžda Kovalenko</strong>, narodila jsem se v roce 1960 v Kazachstánu v malém městečku Talgar, které se nachází v údolí Ťan-šanských hor, kde žije více jak 100 národností.</p>
+
+            <p>V roce 1978 -1983 v městě Novosibirsk jsem vystudovala vysokou zemědělskou školu jako agronom, ale vždy jsem toužila nejenom vědět, jak se rostliny pěstují, ale i jaký vliv mají na lidský organismus. Ráda jsem se věnovala masážím, přírodní medicíně, a proto ještě v Kazachstánu jsem začala měnit svou profesi.</p>
+
+            <p>V České republice jsem absolvovala <strong>školu reflexní terapie</strong> a množství různých <strong>vzdělávacích kurzů týkajících se kosmetologie a alternativní medicíny</strong>. V roce 2015 a 2019 jsem se zúčastnila profesionální vzdělávací konference kosmetiky Gernetic ve Francii.</p>
+
+<p>
+    Každá žena je krásná. Mým přáním a cílem je, abych Vám Vaši krásu pomohla<br>
+    <span style="white-space: nowrap;">udržovat a rozvíjet.</span>
+</p>
+        </div>
+
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- KONTAKTNÍ PRUH -->
+    <section class="contact-strip" id="kontakt">
+        <div class="contact-container">
+
+            <a href="tel:+420776344235" class="contact-item">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 3h4l2 5-3 2a16 16 0 0 0 6 6l2-3 5 2v4c0 1.2-1 2-2.2 2C10 20 4 14 3 5.2 3 4 3.8 3 5 3Z"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="contact-phone">776 344 235</span>
+                    <span class="contact-label" style="display:block">TELEFON</span>
+                </span>
+            </a>
+
+            <a href="https://maps.app.goo.gl/CMdQQcMficLjyb169"
+   class="contact-item address"
+   target="_blank"
+   rel="noopener noreferrer">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+<circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="contact-address">
+    Hotel Olympia<br>
+    Bulharská 853<span class="mobile-break"><br></span><span class="desktop-comma">, </span>Česká Lípa
+</span>
+                    <span class="contact-label" style="display:block">KDE MĚ NAJDETE</span>
+                </span>
+            </a>
+
+            <div class="contact-action">
+    <div class="contact-item">
+        <span class="contact-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2"/>
+            </svg>
+        </span>
+        <span>
+            <span class="contact-address">Po–Pá 9:00–17:00</span>
+<span class="contact-label" style="display:block">PO TELEFONICKÉ DOHODĚ</span>
+        </span>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+<!-- MAPA -->
+<div class="contact-map">
+    <iframe
+        title="Mapa – Hotel Olympia, Česká Lípa"
+        src="https://www.google.com/maps?q=Hotel%20Olympia%2C%20Bulharsk%C3%A1%20853%2C%20%C4%8Cesk%C3%A1%20L%C3%ADpa&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <p>© 2026 Salon Synchro – Naděžda Kovalenko. Všechna práva vyhrazena.</p>
+
+        <p>
+            Web vytvořila
+            <a href="https://www.zajait.cz/"
+               target="_blank"
+               rel="noopener noreferrer">
+                ZajaIT
+            </a>
+        </p>
+
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("serviceModal");
+    const modalText = document.getElementById("serviceModalText");
+    const closeButton = modal.querySelector(".service-modal-close");
+    const cards = document.querySelectorAll(".service-card[data-preview]");
+
+    let previousFocus = null;
+
+    function closeModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (previousFocus) previousFocus.focus();
+    }
+
+    cards.forEach(function (card) {
+        card.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            previousFocus = document.activeElement;
+            modalText.textContent = card.dataset.preview;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            closeButton.focus();
+        });
+    });
+
+    closeButton.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+        }
+
+        if (event.key === "Tab" && modal.classList.contains("active")) {
+            event.preventDefault();
+            closeButton.focus();
+        }
+    });
+});
+
+    // MOBILNÍ MENU
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector(".nav-links");
+
+if (menuToggle && mobileNav) {
+
+    function closeMobileMenu() {
+        menuToggle.classList.remove("active");
+        mobileNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Otevřít menu");
+    }
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mobileNav.classList.toggle("open");
+
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Zavřít menu" : "Otevřít menu"
+        );
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMobileMenu);
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeMobileMenu();
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900) closeMobileMenu();
+    });
+}
+</script>
+
+</body>
+</html>
