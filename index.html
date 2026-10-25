@@ -1167,10 +1167,13 @@
     background: #fbf8f4;
     border: 1px solid #d5b17b;
     border-radius: 12px;
-    padding: 65px 45px 50px;
+    padding: 55px 45px 40px;
     width: 100%;
-    max-width: 500px;
-    text-align: center;
+    max-width: 900px;
+    max-height: 90dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    text-align: left;
     box-shadow: 0 20px 70px rgba(0,0,0,.25);
 }
 
@@ -1206,6 +1209,114 @@
     line-height: 1.5;
 }
 
+        /* NADPISY V DETAILU SLUŽEB */
+
+.service-detail > h2 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #171316;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.service-detail > h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin: 18px auto 0;
+}
+
+.service-detail > h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 520px) {
+    .service-detail > h2 {
+        font-size: 26px;
+    }
+
+    .service-detail > h3 {
+        font-size: 17px;
+    }
+}
+
+        /* ÚVODNÍ TEXT V KOSMETICE */
+
+.detail-intro {
+    margin-top: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5d6c4;
+}
+
+.detail-intro p {
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 400;
+    color: #303030;
+    margin-bottom: 18px;
+}
+
+.detail-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* BEZPLATNÁ KONZULTACE */
+
+.service-consultation {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f3e9dc;
+    border-left: 3px solid #b78645;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+@media (max-width: 520px) {
+    .detail-intro p {
+        font-size: 13px;
+    }
+
+    .service-consultation {
+        font-size: 13px;
+        padding: 16px;
+    }
+}
+
+        .service-price-list {
+    display: grid;
+    gap: 0;
+    margin-top: 25px;
+}
+
+.service-price-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #e5d6c4;
+}
+
+.service-price-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.service-price-item p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 5px;
+}
+
+.service-price {
+    color: #a87436;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
 @media (max-width: 520px) {
     .service-modal-box {
         padding: 60px 25px 40px;
@@ -1213,6 +1324,19 @@
 
     #serviceModalText {
         font-size: 17px;
+    }
+
+    .service-modal-box {
+        padding: 55px 20px 30px;
+        max-height: 90dvh;
+    }
+
+    .service-price-item h3 {
+        font-size: 14px;
+    }
+
+    .service-price-item p {
+        font-size: 12px;
     }
 
 }
@@ -1426,9 +1550,198 @@
             &times;
         </button>
 
-        <span class="service-modal-label">PŘIPRAVUJEME</span>
-
         <p id="serviceModalText"></p>
+
+        
+<div class="service-detail" id="detailKosmetika" hidden>
+
+    <h2>Kosmetika</h2>
+
+    <div class="detail-intro">
+        <p>Žena je krásná a naším přáním a cílem je, abychom Vám pomohli Vaši krásu udržovat a rozvíjet.</p>
+
+        <p>Jako kosmetička pracuji velmi ráda, moc si vážím žen, protože žena má za úkol od Pána Boha být krásná, přitažlivá, citlivá, ale i silná a moudrá. Ze své vlastní životní zkušenosti můžu směle tvrdit, že pravidelná a správná péče o pokožku se vždycky vyplatí. Vaše pleť se Vám odvděčí svěžestí, zdravím a mladším vzhledem. A když je Vám potom 50, 60, 70 let…, též si všimnete rozdílu oproti svým vrstevníkům.</p>
+
+        <p>Preferuji hlavně přírodní kosmetiku, pracuji s kosmetikou Gernetic, Janssen, Inspira.</p>
+    </div>
+
+    <h3>Ceník kosmetických služeb</h3>
+
+    <div class="service-price-list">
+
+        <div class="service-price-item">
+            <h3>Základní ošetření všech typů pleti</h3>
+            <p>Ošetření zahrnuje čištění, tonizaci, masku, jemnou masáž, výživu.</p>
+            <div class="service-price">70 min. · 790 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření aknetické, zánětlivé pleti</h3>
+            <p>Ošetření zahrnuje čištění, detoxikaci, masku, regeneraci.</p>
+            <div class="service-price">70 min. · 600–700 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření po akné, zjemnění jizviček</h3>
+            <p>Ošetření zahrnuje čištění, detoxikaci, masku, regeneraci.</p>
+            <div class="service-price">70 min. · 600–750 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření mastné problematické a citlivé pleti</h3>
+            <div class="service-price">1 h 20 min. · 1 150 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření velmi suché dehydratované pleti</h3>
+            <div class="service-price">1 h 20 min. · 1 150 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření smíšené a citlivé pleti</h3>
+            <div class="service-price">1 h 20 min. · 1 150 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření se zesvětlujícím a proti pigmentačním účinkem</h3>
+            <p>Ošetření zahrnuje čištění, tonizaci, depilaci, úpravu obočí, výživu, masku, hlubokou relaxačně-regenerační masáž.</p>
+            <div class="service-price">1 h 20 min. · 1 150 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření obličeje a dekoltu s detoxikačním účinkem</h3>
+            <div class="service-price">1 h 30 min. · 1 250 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření obličeje a dekoltu kriometodou</h3>
+            <div class="service-price">1 h 30 min. · 1 250 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření obličeje a dekoltu s limfatickým účinkem</h3>
+            <div class="service-price">1 h 30 min. · 1 250 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření zralé pleti</h3>
+            <div class="service-price">1 h 30 min. · 1 350–1 390 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření pleti s hlubokým stimulačním a liftingovým nebo regeneračním účinkem</h3>
+            <p>Čištění, tonizace, stimulace, aktivace, regenerace, masáž, maska.</p>
+            <div class="service-price">1 390–1 490 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření AHA kyselinou</h3>
+            <p>Pigmentace, nečistá pleť, jizvy, omlazení pleti.</p>
+            <div class="service-price">Min. 6× 500 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření očního okolí</h3>
+            <div class="service-price">45 min. · 450–550 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření dekoltu</h3>
+            <div class="service-price">45 min. · 450–490 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření jizev na celém těle</h3>
+            <p>Po operacích prsou, po akné, po operačních očích atd.</p>
+            <div class="service-price">45 min. · 300–650 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Masáž + maska obličeje a dekoltu</h3>
+            <div class="service-price">45 min. · 750 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Ošetření pro muže</h3>
+            <p>Tonizace, čištění, hydratace, regenerace, výživa, masáž, masky.</p>
+            <div class="service-price">60–75 min. · 690 Kč</div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Relax pro muže</h3>
+            <p>Masáž chodidel, hlavy, obličeje + maska.</p>
+            <div class="service-price">900 Kč</div>
+        </div>
+
+    </div>
+
+    <p class="service-consultation">
+        Konzultace – individuální diagnostika pleti, vytvoření osobního programu – 15 minut zdarma.
+    </p>
+
+</div>
+
+        
+<!-- SPECIFICKÁ OŠETŘENÍ -->
+<div class="service-detail" id="detailOsetreni" hidden>
+
+    <h2>Specifická ošetření</h2>
+
+    <div class="service-price-list">
+
+        <div class="service-price-item">
+            <h3>Dotyk rosy</h3>
+            <p>
+                Kosmetické ošetření s hydratačním účinkem
+                pro každý věk a typ pleti, maximální
+                osvěžení a zjemnění pleti + masáž chodidel.
+            </p>
+            <div class="service-price">
+                1 h 45 min. · 1 450 Kč
+            </div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Mladá a krásná</h3>
+            <p>
+                Kosmetické ošetření s liftingovým účinkem
+                působící proti vzniku vrásek a proti
+                povadnutí pokožky, přináší báječný pocit
+                lehkosti a svěžesti + masáž chodidel.
+            </p>
+            <div class="service-price">
+                1 h 45 min. · 1 490 Kč
+            </div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Nechte se hýčkat a rozmazlovat</h3>
+            <p>
+                Kosmetické ošetření všech druhů pleti
+                s hydratačním, regeneračním a liftingovým
+                účinkem + masáž chodidel.
+            </p>
+            <div class="service-price">
+                1 h 45 min. · 1 550 Kč
+            </div>
+        </div>
+
+        <div class="service-price-item">
+            <h3>Masáž – Efleráž</h3>
+            <p>
+                Hluboká relaxační masáž s použitím drenážní
+                techniky a produktů s lymfatickým účinkem.
+                Pouze pro ženy.
+            </p>
+            <div class="service-price">
+                60 min. · 990 Kč
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 
     </div>
 </div>
@@ -1599,7 +1912,22 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
             previousFocus = document.activeElement;
-            modalText.textContent = card.dataset.preview;
+            const detailKosmetika = document.getElementById("detailKosmetika");
+const detailOsetreni = document.getElementById("detailOsetreni");
+
+detailKosmetika.hidden = true;
+detailOsetreni.hidden = true;
+modalText.hidden = false;
+
+if (card.classList.contains("kosmetika")) {
+    modalText.hidden = true;
+    detailKosmetika.hidden = false;
+} else if (card.classList.contains("osetreni")) {
+    modalText.hidden = true;
+    detailOsetreni.hidden = false;
+} else {
+    modalText.textContent = card.dataset.preview;
+}
 
             modal.classList.add("active");
             modal.setAttribute("aria-hidden", "false");
