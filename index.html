@@ -1147,6 +1147,10 @@
 
 /* MODAL – NÁHLED SLUŽEB */
 
+        .service-detail[hidden] {
+    display: none;
+}
+
 .service-modal {
     position: fixed;
     inset: 0;
@@ -2021,9 +2025,11 @@ document.addEventListener("DOMContentLoaded", function () {
             previousFocus = document.activeElement;
             const detailKosmetika = document.getElementById("detailKosmetika");
 const detailOsetreni = document.getElementById("detailOsetreni");
+const detailOboci = document.getElementById("detailOboci");
 
 detailKosmetika.hidden = true;
 detailOsetreni.hidden = true;
+detailOboci.hidden = true;
 modalText.hidden = false;
 
 if (card.classList.contains("kosmetika")) {
@@ -2032,6 +2038,9 @@ if (card.classList.contains("kosmetika")) {
 } else if (card.classList.contains("osetreni")) {
     modalText.hidden = true;
     detailOsetreni.hidden = false;
+} else if (card.classList.contains("oboci")) {
+    modalText.hidden = true;
+    detailOboci.hidden = false;
 } else {
     modalText.textContent = card.dataset.preview;
 }
