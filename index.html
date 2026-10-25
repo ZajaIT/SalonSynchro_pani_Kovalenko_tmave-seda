@@ -1171,14 +1171,45 @@
     background: #fbf8f4;
     border: 1px solid #d5b17b;
     border-radius: 12px;
-    padding: 55px 45px 40px;
     width: 100%;
     max-width: 900px;
     max-height: 90dvh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     text-align: left;
     box-shadow: 0 20px 70px rgba(0,0,0,.25);
+}
+
+.service-modal-header {
+    position: relative;
+    flex-shrink: 0;
+    padding: 55px 45px 0;
+    background: #fbf8f4;
+}
+
+.service-modal-header h2 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #171316;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.service-modal-header h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin: 18px auto 0;
+}
+
+.service-modal-body {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 45px 40px;
 }
 
 .service-modal-close {
@@ -1322,17 +1353,20 @@
 }
 
 @media (max-width: 520px) {
-    .service-modal-box {
-        padding: 60px 25px 40px;
+    .service-modal-header {
+        padding: 55px 20px 0;
+    }
+
+    .service-modal-header h2 {
+        font-size: 26px;
+    }
+
+    .service-modal-body {
+        padding: 0 20px 30px;
     }
 
     #serviceModalText {
         font-size: 17px;
-    }
-
-    .service-modal-box {
-        padding: 55px 20px 30px;
-        max-height: 90dvh;
     }
 
     .service-price-item h3 {
@@ -1342,7 +1376,6 @@
     .service-price-item p {
         font-size: 12px;
     }
-
 }
 
 /* MAPA POD KONTAKTEM */
@@ -1390,6 +1423,10 @@
     .about-container {
         z-index: 1;
     }
+}
+
+        .service-detail > h2 {
+    display: none;
 }
     </style>
 </head>
@@ -1548,11 +1585,19 @@
 
 <!-- MODAL – NÁHLED SLUŽEB -->
 <div class="service-modal" id="serviceModal" aria-hidden="true">
-    <div class="service-modal-box" role="dialog" aria-modal="true" aria-labelledby="serviceModalText">
+    <div class="service-modal-box" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+
+    <div class="service-modal-header">
 
         <button class="service-modal-close" type="button" aria-label="Zavřít okno">
             &times;
         </button>
+
+        <h2 id="serviceModalTitle"></h2>
+
+    </div>
+
+    <div class="service-modal-body">
 
         <p id="serviceModalText"></p>
 
@@ -2013,7 +2058,7 @@
     </p>
 
 </div>
-
+</div>
 
     </div>
 </div>
@@ -2211,7 +2256,15 @@ if (card.classList.contains("kosmetika")) {
     modalText.textContent = card.dataset.preview;
 }
 
-            modal.classList.add("active");
+
+const modalTitle = document.getElementById("serviceModalTitle");
+const activeDetail = modal.querySelector(".service-detail:not([hidden])");
+
+modalTitle.textContent = activeDetail
+    ? activeDetail.querySelector("h2").textContent
+    : "";
+
+modal.classList.add("active");
             modal.setAttribute("aria-hidden", "false");
             document.body.style.overflow = "hidden";
             closeButton.focus();
