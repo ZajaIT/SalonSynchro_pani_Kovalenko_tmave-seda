@@ -341,6 +341,15 @@
     margin-top: 25px;
 }
 
+        .about-photo {
+    display: block;
+    width: 190px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
 /* SVISLÁ ZLATÁ LINKA */
 
 .about-divider {
@@ -400,6 +409,10 @@
 @media (max-width: 650px) {
     .about {
     padding: 55px 22px;
+
+        .about-photo {
+    display: none;
+}
 
     background-size:
         260px auto,
@@ -1396,10 +1409,14 @@
     <div class="about-container">
 
         <div class="about-heading">
-            <span class="about-eyebrow">POZNEJTE MĚ</span>
-            <h2>O mně</h2>
-            <div class="about-line"></div>
-        </div>
+    <span class="about-eyebrow">POZNEJTE MĚ</span>
+    <h2>O mně</h2>
+    <div class="about-line"></div>
+
+    <img src="kovalenko.png"
+         alt="Naděžda Kovalenko – Salon Synchro"
+         class="about-photo">
+</div>
 
         <div class="about-divider"></div>
 
