@@ -2265,6 +2265,7 @@ modalTitle.textContent = activeDetail
     : "";
 
 modal.classList.add("active");
+            modal.querySelector(".service-modal-body").scrollTop = 0;
             modal.setAttribute("aria-hidden", "false");
             document.body.style.overflow = "hidden";
             closeButton.focus();
