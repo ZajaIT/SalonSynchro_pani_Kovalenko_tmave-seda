@@ -3150,13 +3150,15 @@ document.querySelectorAll(".gallery-card[data-gallery]").forEach(function (card)
         galleryTitle.textContent = group.title;
         document.getElementById(group.content).hidden = false;
 
-        galleryBody.scrollTop = 0;
+        
+galleryModal.classList.add("active");
+galleryModal.setAttribute("aria-hidden", "false");
+document.body.style.overflow = "hidden";
 
-        galleryModal.classList.add("active");
-        galleryModal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
+galleryBody.scrollTop = 0;
 
-        galleryClose.focus();
+galleryClose.focus({ preventScroll: true });
+
     });
 });
 
