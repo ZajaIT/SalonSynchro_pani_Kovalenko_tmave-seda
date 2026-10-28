@@ -1925,6 +1925,202 @@
 }
 
 
+/* =========================================
+   MODAL GALERIE – PC
+========================================= */
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.gallery-modal-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 90dvh;
+    overflow: hidden;
+    background: #fbf8f4;
+    border: 1px solid #d5b17b;
+    border-radius: 12px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-modal-header {
+    position: relative;
+    flex-shrink: 0;
+    padding: 55px 45px 25px;
+    text-align: center;
+}
+
+.gallery-modal-header h2 {
+    color: #171316;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.gallery-modal-header h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 2px;
+    margin: 18px auto 0;
+    background: var(--gold-gradient);
+}
+
+.gallery-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 2;
+    border: none;
+    background: transparent;
+    color: #303030;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.gallery-modal-close:hover {
+    color: #b78645;
+}
+
+.gallery-modal-body {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 45px 45px;
+}
+
+.gallery-modal-content[hidden] {
+    display: none;
+}
+
+.gallery-modal-description {
+    margin-bottom: 28px;
+    color: #171316;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.gallery-photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.gallery-photo-grid img {
+    flex: 0 1 calc((100% - 36px) / 3);
+    width: calc((100% - 36px) / 3);
+    min-width: 0;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid #e5d6c4;
+}
+
+
+/* =========================================
+   MODAL GALERIE – TABLET (521–900 px)
+========================================= */
+
+@media (min-width: 521px) and (max-width: 900px) {
+    .gallery-modal {
+        padding: 16px;
+    }
+
+    .gallery-modal-header {
+        padding: 50px 30px 22px;
+    }
+
+    .gallery-modal-header h2 {
+        font-size: 30px;
+    }
+
+    .gallery-modal-body {
+        padding: 0 30px 35px;
+    }
+
+    .gallery-photo-grid {
+    gap: 15px;
+}
+
+.gallery-photo-grid img {
+    flex-basis: calc((100% - 15px) / 2);
+    width: calc((100% - 15px) / 2);
+}
+
+    .gallery-modal-description {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   MODAL GALERIE – MOBIL (do 520 px)
+========================================= */
+
+@media (max-width: 520px) {
+    .gallery-modal {
+        padding: 12px;
+    }
+
+    .gallery-modal-box {
+        max-height: 92dvh;
+    }
+
+    .gallery-modal-header {
+        padding: 52px 20px 20px;
+    }
+
+    .gallery-modal-header h2 {
+        font-size: 25px;
+    }
+
+    .gallery-modal-header h2::after {
+        margin-top: 15px;
+    }
+
+    .gallery-modal-close {
+        top: 12px;
+        right: 16px;
+    }
+
+    .gallery-modal-body {
+        padding: 0 18px 28px;
+    }
+
+    .gallery-modal-description {
+        margin-bottom: 22px;
+        font-size: 14px;
+    }
+
+    .gallery-photo-grid {
+    gap: 18px;
+}
+
+.gallery-photo-grid img {
+    flex-basis: 100%;
+    width: 100%;
+}
+}
+
 
     </style>
 </head>
@@ -2645,6 +2841,64 @@
     </div>
 </section>
 
+        
+<!-- MODAL GALERIE -->
+<div class="gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="gallery-modal-box" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle">
+
+        <div class="gallery-modal-header">
+            <button class="gallery-modal-close" type="button" aria-label="Zavřít galerii">
+                &times;
+            </button>
+
+            <h2 id="galleryModalTitle"></h2>
+        </div>
+
+        <div class="gallery-modal-body">
+
+            <!-- PROSTŘEDÍ SALONU -->
+            <div class="gallery-modal-content" id="galleryInterier" hidden>
+                <div class="gallery-photo-grid">
+                    <img src="interier1.webp" alt="Prostředí salonu – fotografie 1" loading="lazy">
+                    <img src="interier2.webp" alt="Prostředí salonu – fotografie 2" loading="lazy">
+                    <img src="interier3.webp" alt="Prostředí salonu – fotografie 3" loading="lazy">
+                </div>
+            </div>
+
+            <!-- ŠKOLENÍ -->
+            <div class="gallery-modal-content" id="gallerySkoleni" hidden>
+                <p class="gallery-modal-description">
+                    Školení s firmou GERNETIC ve Francii 2015
+                </p>
+
+                <div class="gallery-photo-grid">
+                    <img src="skoleni1.jpg" alt="Školení GERNETIC – fotografie 1" loading="lazy">
+                    <img src="skoleni2.jpg" alt="Školení GERNETIC – fotografie 2" loading="lazy">
+                    <img src="skoleni3.jpg" alt="Školení GERNETIC – fotografie 3" loading="lazy">
+                    <img src="skoleni4.jpg" alt="Školení GERNETIC – fotografie 4" loading="lazy">
+                    <img src="skoleni5.jpg" alt="Školení GERNETIC – fotografie 5" loading="lazy">
+                    <img src="skoleni6.jpg" alt="Školení GERNETIC – fotografie 6" loading="lazy">
+                    <img src="skoleni7.jpg" alt="Školení GERNETIC – fotografie 7" loading="lazy">
+                    <img src="skoleni8.jpg" alt="Školení GERNETIC – fotografie 8" loading="lazy">
+                    <img src="skoleni9.jpg" alt="Školení GERNETIC – fotografie 9" loading="lazy">
+                    <img src="skoleni10.jpg" alt="Školení GERNETIC – fotografie 10" loading="lazy">
+                </div>
+            </div>
+
+            <!-- VÝSLEDKY OŠETŘENÍ -->
+            <div class="gallery-modal-content" id="galleryVysledky" hidden>
+                <div class="gallery-photo-grid">
+                    <img src="citliva-plet.jpg" alt="Výsledky ošetření – citlivá pleť" loading="lazy">
+                    <img src="vrasky.jpg" alt="Výsledky ošetření – vrásky" loading="lazy">
+                    <img src="akne.jpg" alt="Výsledky ošetření – akné" loading="lazy">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 </main>
 
 <!-- KONTAKTNÍ PRUH -->
@@ -2853,6 +3107,90 @@ if (menuToggle && mobileNav) {
         if (window.innerWidth > 900) closeMobileMenu();
     });
 }
+
+    
+/* =========================================
+   OTEVÍRÁNÍ GALERIE
+========================================= */
+
+const galleryModal = document.getElementById("galleryModal");
+const galleryClose = galleryModal.querySelector(".gallery-modal-close");
+const galleryTitle = document.getElementById("galleryModalTitle");
+const galleryBody = galleryModal.querySelector(".gallery-modal-body");
+
+const galleryGroups = {
+    interier: {
+        title: "Prostředí salonu",
+        content: "galleryInterier"
+    },
+    skoleni: {
+        title: "Odbornost a vzdělávání",
+        content: "gallerySkoleni"
+    },
+    vysledky: {
+        title: "Výsledky ošetření",
+        content: "galleryVysledky"
+    }
+};
+
+let galleryPreviousFocus = null;
+
+document.querySelectorAll(".gallery-card[data-gallery]").forEach(function (card) {
+    card.addEventListener("click", function () {
+        const group = galleryGroups[card.dataset.gallery];
+
+        if (!group) return;
+
+        galleryPreviousFocus = document.activeElement;
+
+        galleryModal.querySelectorAll(".gallery-modal-content").forEach(function (content) {
+            content.hidden = true;
+        });
+
+        galleryTitle.textContent = group.title;
+        document.getElementById(group.content).hidden = false;
+
+        galleryBody.scrollTop = 0;
+
+        galleryModal.classList.add("active");
+        galleryModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+        galleryClose.focus();
+    });
+});
+
+function closeGalleryModal() {
+    galleryModal.classList.remove("active");
+    galleryModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    if (galleryPreviousFocus) {
+        galleryPreviousFocus.focus();
+    }
+}
+
+galleryClose.addEventListener("click", closeGalleryModal);
+
+galleryModal.addEventListener("click", function (event) {
+    if (event.target === galleryModal) {
+        closeGalleryModal();
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (!galleryModal.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+        closeGalleryModal();
+    }
+
+    if (event.key === "Tab") {
+        event.preventDefault();
+        galleryClose.focus();
+    }
+});
+
 </script>
 
 </body>
