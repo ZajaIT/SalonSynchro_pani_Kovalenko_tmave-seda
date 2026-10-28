@@ -1443,6 +1443,25 @@
         .service-detail > h2 {
     display: none;
 }
+
+        /* PC */
+.masaze-mobile-break {
+    display: inline;
+}
+
+/* TABLET */
+@media (min-width: 521px) and (max-width: 900px) {
+    .masaze-mobile-break {
+        display: inline;
+    }
+}
+
+/* MOBIL */
+@media (max-width: 520px) {
+    .masaze-mobile-break {
+        display: block;
+    }
+}
     </style>
 </head>
 
@@ -1569,7 +1588,7 @@
 
                 <a href="#" class="service-card masaze" data-preview="Tady bude proklik na masáže.">
                     <div class="service-content">
-                        <h2>MASÁŽE A BAŇKY</h2>
+                        <h2>MASÁŽE<span class="masaze-mobile-break"> </span>A BAŇKY</h2>
                         <div class="service-line"></div>
                         <p>Uvolnění těla,<br>obnovení energie.</p>
                     </div>
