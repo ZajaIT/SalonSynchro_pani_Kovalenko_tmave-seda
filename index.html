@@ -1726,7 +1726,7 @@
 
 .gallery-section {
     background: #ffffff;
-    padding: 85px 24px 95px;
+    padding: 55px 24px 65px;
 }
 
 .gallery-container {
@@ -1736,7 +1736,7 @@
 
 .gallery-heading {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 .gallery-heading > span {
@@ -1765,51 +1765,53 @@
 .gallery-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 0;
 }
 
 .gallery-card {
     appearance: none;
-    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     width: 100%;
-    min-height: 205px;
-    padding: 28px 30px;
-    background: #fbf8f4;
-    border: 1px solid #e5d6c4;
-    border-radius: 4px;
+    min-height: 75px;
+    padding: 15px 20px;
+    background: transparent;
+    border: none;
+    border-right: 1px solid #d8c5ae;
+    border-radius: 0;
     color: #171316;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
-    transition: border-color .25s, background .25s;
+    transition: color .25s;
+}
+
+.gallery-card:last-child {
+    border-right: none;
 }
 
 .gallery-card:hover {
-    border-color: #b78645;
-    background: #f7f0e7;
+    color: #b78645;
+    background: transparent;
 }
 
 .gallery-card-number {
-    color: #b78645;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    display: none;
 }
 
 .gallery-card h3 {
-    max-width: 270px;
-    font-size: 21px;
+    max-width: none;
+    font-size: 17px;
     font-weight: 500;
     line-height: 1.4;
 }
 
 .gallery-card-arrow {
-    align-self: flex-end;
+    align-self: center;
     color: #b78645;
-    font-size: 29px;
+    font-size: 23px;
     font-weight: 300;
     line-height: 1;
 }
