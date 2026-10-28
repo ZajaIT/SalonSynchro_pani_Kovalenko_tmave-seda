@@ -1462,6 +1462,45 @@
         display: block;
     }
 }
+
+        /* PC – FOTOGRAFIE BAŇKOVÁNÍ */
+
+.bankovani-photo {
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.bankovani-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: saturate(0.65) contrast(0.88) brightness(1.08);
+}
+
+.bankovani-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(251, 248, 244, 0.22);
+    pointer-events: none;
+}
+
+/* TABLET */
+
+@media (min-width: 521px) and (max-width: 900px) {
+    .bankovani-photo {
+        margin-top: 25px;
+    }
+}
+
+/* MOBIL */
+
+@media (max-width: 520px) {
+    .bankovani-photo {
+        margin-top: 22px;
+    }
+}
     </style>
 </head>
 
@@ -1894,6 +1933,10 @@
 </div>
         </div>
     </div>
+
+    <div class="bankovani-photo">
+    <img src="bankovani.webp" alt="Baňkování zad pomocí skleněných baněk">
+</div>
 
 </div>
 
