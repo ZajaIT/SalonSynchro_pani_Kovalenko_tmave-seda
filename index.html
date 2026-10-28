@@ -1719,6 +1719,179 @@
     }
 }
 
+        
+/* =========================================
+   GALERIE – PC
+========================================= */
+
+.gallery-section {
+    background: #ffffff;
+    padding: 85px 24px 95px;
+}
+
+.gallery-container {
+    max-width: 1190px;
+    margin: 0 auto;
+}
+
+.gallery-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.gallery-heading > span {
+    display: block;
+    color: #b78645;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 13px;
+}
+
+.gallery-heading h2 {
+    color: #171316;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.gallery-heading-line {
+    width: 65px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin: 20px auto 0;
+}
+
+.gallery-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.gallery-card {
+    appearance: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 205px;
+    padding: 28px 30px;
+    background: #fbf8f4;
+    border: 1px solid #e5d6c4;
+    border-radius: 4px;
+    color: #171316;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .25s, background .25s;
+}
+
+.gallery-card:hover {
+    border-color: #b78645;
+    background: #f7f0e7;
+}
+
+.gallery-card-number {
+    color: #b78645;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.gallery-card h3 {
+    max-width: 270px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.gallery-card-arrow {
+    align-self: flex-end;
+    color: #b78645;
+    font-size: 29px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.gallery-card:focus-visible {
+    outline: 2px solid #b78645;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   GALERIE – TABLET (521–900 px)
+========================================= */
+
+@media (min-width: 521px) and (max-width: 900px) {
+    .gallery-section {
+        padding: 70px 24px 80px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 42px;
+    }
+
+    .gallery-cards {
+        gap: 15px;
+    }
+
+    .gallery-card {
+        min-height: 190px;
+        padding: 23px 20px;
+    }
+
+    .gallery-card h3 {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   GALERIE – MOBIL (do 520 px)
+========================================= */
+
+@media (max-width: 520px) {
+    .gallery-section {
+        padding: 60px 22px 70px;
+    }
+
+    .gallery-heading {
+        margin-bottom: 32px;
+    }
+
+    .gallery-heading > span {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 42px;
+    }
+
+    .gallery-heading-line {
+        margin-top: 17px;
+    }
+
+    .gallery-cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .gallery-card {
+        min-height: 145px;
+        padding: 22px 24px;
+    }
+
+    .gallery-card h3 {
+        font-size: 19px;
+    }
+
+    .gallery-card-arrow {
+        font-size: 26px;
+    }
+}
+
+
     </style>
 </head>
 
@@ -2403,9 +2576,45 @@
 </section>
 
 
-    </main>
+    
+<!-- GALERIE -->
+<section class="gallery-section" id="galerie">
+    <div class="gallery-container">
 
-    <!-- KONTAKTNÍ PRUH -->
+        <div class="gallery-heading">
+            <span>SALON SYNCHRO</span>
+            <h2>Galerie</h2>
+            <div class="gallery-heading-line"></div>
+        </div>
+
+        <div class="gallery-cards">
+
+            <button class="gallery-card" type="button" data-gallery="interier">
+                <span class="gallery-card-number">01</span>
+                <h3>Prostředí salonu</h3>
+                <span class="gallery-card-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="gallery-card" type="button" data-gallery="skoleni">
+                <span class="gallery-card-number">02</span>
+                <h3>Odbornost a vzdělávání</h3>
+                <span class="gallery-card-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="gallery-card" type="button" data-gallery="vysledky">
+                <span class="gallery-card-number">03</span>
+                <h3>Výsledky ošetření</h3>
+                <span class="gallery-card-arrow" aria-hidden="true">→</span>
+            </button>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- KONTAKTNÍ PRUH -->
+
     <section class="contact-strip" id="kontakt">
         <div class="contact-container">
 
