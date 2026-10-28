@@ -1315,6 +1315,27 @@
     margin-bottom: 0;
 }
 
+        /* PC – ODKAZY NA KOSMETICKÉ ZNAČKY */
+.detail-intro a {
+    color: #a87436;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* TABLET */
+@media (min-width: 521px) and (max-width: 900px) {
+    .detail-intro a {
+        text-underline-offset: 3px;
+    }
+}
+
+/* MOBIL */
+@media (max-width: 520px) {
+    .detail-intro a {
+        text-underline-offset: 2px;
+    }
+}
+
 /* BEZPLATNÁ KONZULTACE */
 
 .service-consultation {
@@ -1758,7 +1779,14 @@
 
         <p>Jako kosmetička pracuji velmi ráda, moc si vážím žen, protože žena má za úkol od Pána Boha být krásná, přitažlivá, citlivá, ale i silná a moudrá. Ze své vlastní životní zkušenosti můžu směle tvrdit, že pravidelná a správná péče o pokožku se vždycky vyplatí. Vaše pleť se Vám odvděčí svěžestí, zdravím a mladším vzhledem. A když je Vám potom 50, 60, 70 let…, též si všimnete rozdílu oproti svým vrstevníkům.</p>
 
-        <p>Preferuji hlavně přírodní kosmetiku, pracuji s kosmetikou Janssen, Inspira Gernetic.</p>
+        <p>
+    <strong>
+        Preferuji hlavně přírodní kosmetiku, pracuji s kosmetikou
+        <a href="https://www.gernetic.cz/" target="_blank" rel="noopener noreferrer">Gernetic</a>,
+        <a href="https://www.janssen-beauty.cz/" target="_blank" rel="noopener noreferrer">Janssen</a>,
+        <a href="https://inspira-cosmetics.cz/" target="_blank" rel="noopener noreferrer">Inspira</a>.
+    </strong>
+</p>
     </div>
 
     <h3>Ceník kosmetických služeb</h3>
