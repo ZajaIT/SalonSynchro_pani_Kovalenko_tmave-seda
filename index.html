@@ -1821,32 +1821,49 @@
     outline-offset: 4px;
 }
 
+
 /* =========================================
    GALERIE – TABLET (521–900 px)
 ========================================= */
 
 @media (min-width: 521px) and (max-width: 900px) {
     .gallery-section {
-        padding: 70px 24px 80px;
+        padding: 30px 22px;
+    }
+
+    .gallery-heading {
+        margin-bottom: 20px;
     }
 
     .gallery-heading h2 {
         font-size: 42px;
     }
 
+    .gallery-heading-line {
+        margin-top: 14px;
+    }
+
     .gallery-cards {
-        gap: 15px;
+        gap: 0;
     }
 
     .gallery-card {
-        min-height: 190px;
-        padding: 23px 20px;
+        min-height: 55px;
+        padding: 10px 12px;
+        gap: 8px;
     }
 
     .gallery-card h3 {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    .gallery-card-arrow {
+        font-size: 20px;
+        flex-shrink: 0;
     }
 }
+
+
 
 /* =========================================
    GALERIE – MOBIL (do 520 px)
@@ -1854,11 +1871,11 @@
 
 @media (max-width: 520px) {
     .gallery-section {
-        padding: 60px 22px 70px;
+        padding: 30px 22px 35px;
     }
 
     .gallery-heading {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 
     .gallery-heading > span {
@@ -1867,31 +1884,46 @@
     }
 
     .gallery-heading h2 {
-        font-size: 42px;
+        font-size: 38px;
     }
 
     .gallery-heading-line {
-        margin-top: 17px;
+        margin-top: 14px;
     }
 
     .gallery-cards {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 0;
     }
 
     .gallery-card {
-        min-height: 145px;
-        padding: 22px 24px;
+        min-height: 58px;
+        padding: 14px 5px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e5d6c4;
+        text-align: left;
+    }
+
+    .gallery-card:last-child {
+        border-bottom: none;
     }
 
     .gallery-card h3 {
-        font-size: 19px;
+        font-size: 17px;
+        line-height: 1.4;
     }
 
     .gallery-card-arrow {
-        font-size: 26px;
+        align-self: center;
+        flex-shrink: 0;
+        font-size: 22px;
     }
 }
+
 
 
     </style>
