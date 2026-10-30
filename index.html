@@ -707,14 +707,14 @@
 }
 
         .contact-container {
-            max-width: 1320px;
-            width: 100%;
-            margin: auto;
-            padding: 20px 24px;
-            display: grid;
-            grid-template-columns: 1.05fr 1.4fr 1fr;
-            align-items: center;
-        }
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr 1fr 0.85fr;
+    align-items: center;
+}
 
         .contact-item {
             display: flex;
@@ -724,9 +724,9 @@
         }
 
         .contact-item.address {
-            border-left: 1px solid #96868c;
-            padding-left: 73px;
-        }
+    border-left: 1px solid #96868c;
+    padding-left: 24px;
+}
 
         .contact-icon {
             width: 70px;
@@ -768,11 +768,32 @@
         }
 
         .contact-action {
-            border-left: 1px solid #96868c;
-            padding-left: 65px;
-            display: flex;
-            justify-content: flex-start;
-        }
+    border-left: 1px solid #96868c;
+    padding-left: 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+        .contact-social {
+    border-left: 1px solid #96868c;
+    padding-left: 24px;
+}
+
+.contact-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-social-links a {
+    color: #fff;
+    font-size: 17px;
+    transition: color .3s;
+}
+
+.contact-social-links a:hover {
+    color: #f4d6a5;
+}
 
         .contact-book {
             display: inline-flex;
@@ -830,13 +851,13 @@
                 font-size: 25px;
             }
 
-            .contact-item.address {
-                padding-left: 30px;
-            }
+           .contact-item.address {
+    padding-left: 24px;
+}
 
-            .contact-action {
-                padding-left: 30px;
-            }
+.contact-action {
+    padding-left: 24px;
+}
         }
 
         /* MOBILNÍ ZÁKLAD – DETAILNĚ DOLADÍME PO PC */
@@ -3105,6 +3126,21 @@
         </span>
     </div>
 </div>
+
+                    <!-- SOCIÁLNÍ SÍTĚ -->
+            <div class="contact-item contact-social">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M7 12h10M12 7v10"/>
+                    </svg>
+                </span>
+
+                <span class="contact-social-links">
+                    <a href="https://www.facebook.com/p/Kosmetika-Salon-Synchro-61561025497949/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="#">Instagram</a>
+                </span>
+            </div>
 
         </div>
     </section>
