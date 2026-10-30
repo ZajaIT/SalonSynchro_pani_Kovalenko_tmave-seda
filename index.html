@@ -2031,13 +2031,19 @@
     gap: 18px;
 }
 
-.gallery-photo-grid img {
+.gallery-photo-grid img,
+.gallery-photo-grid video {
     flex: 0 1 calc((100% - 36px) / 3);
     width: calc((100% - 36px) / 3);
     min-width: 0;
     height: auto;
     object-fit: contain;
     border: 1px solid #e5d6c4;
+}
+
+.gallery-photo-grid video {
+    display: block;
+    background: #171316;
 }
 
 /* INTERIÉR – PC */
@@ -2093,7 +2099,8 @@
     gap: 15px;
 }
 
-.gallery-photo-grid img {
+.gallery-photo-grid img,
+.gallery-photo-grid video {
     flex-basis: calc((100% - 15px) / 2);
     width: calc((100% - 15px) / 2);
 }
@@ -2157,7 +2164,8 @@
     gap: 18px;
 }
 
-.gallery-photo-grid img {
+.gallery-photo-grid img,
+.gallery-photo-grid video {
     flex-basis: 100%;
     width: 100%;
 }
@@ -2962,7 +2970,13 @@
                     <img src="skoleni7.jpg" alt="Školení GERNETIC – fotografie 7" loading="lazy">
                     <img src="skoleni8.jpg" alt="Školení GERNETIC – fotografie 8" loading="lazy">
                     <img src="skoleni9.jpg" alt="Školení GERNETIC – fotografie 9" loading="lazy">
-                </div>
+
+<video controls playsinline preload="metadata">
+    <source src="video-skoleni.mp4" type="video/mp4">
+    Váš prohlížeč nepodporuje přehrávání videa.
+</video>
+
+</div>
             </div>
 
             <!-- VÝSLEDKY OŠETŘENÍ -->
@@ -3243,6 +3257,13 @@ galleryClose.focus({ preventScroll: true });
 });
 
 function closeGalleryModal() {
+
+    // Zastavení všech videí v galerii
+    galleryModal.querySelectorAll("video").forEach(function (video) {
+        video.pause();
+        video.currentTime = 0;
+    });
+
     galleryModal.classList.remove("active");
     galleryModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
