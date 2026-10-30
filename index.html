@@ -706,76 +706,15 @@
     align-items: center;
 }
 
-      .contact-container {
-    max-width: 1500px;
-    width: 100%;
-    margin: auto;
-    padding: 20px 30px;
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-}
-
-.contact-container > .contact-item {
-    flex: 0 1 auto;
-    min-width: 0;
-    padding: 0 24px;
-    gap: 18px;
-}
-
-.contact-container > .contact-item:first-child {
-    padding-left: 0;
-}
-
-.contact-container > .contact-item:last-child {
-    padding-right: 0;
-}
-
-/* PC – svislé oddělovače */
-@media (min-width: 901px) {
-    .contact-container > .contact-item:not(:first-child) {
-        border-left: 1px solid #96868c;
-    }
-}
-
-.contact-container .contact-icon {
-    flex-shrink: 0;
-}
-
-.contact-container .contact-social-links {
-    flex-shrink: 0;
-}
-
-        /* KONTAKT – ROZLOŽENÍ PC */
-@media (min-width: 901px) {
-
-    .contact-item {
-        gap: 18px;
-        min-width: 0;
-    }
-
-    .contact-item.address {
-        padding-left: 25px;
-    }
-
-    .contact-action {
-        padding-left: 25px;
-    }
-
-    .contact-social {
-        padding-left: 25px;
-        gap: 18px;
-    }
-
-    .contact-icon {
-        width: 64px;
-        height: 64px;
-    }
-
-    .contact-address {
-        font-size: 17px;
-    }
-}
+        .contact-container {
+            max-width: 1320px;
+            width: 100%;
+            margin: auto;
+            padding: 20px 24px;
+            display: grid;
+            grid-template-columns: 1.05fr 1.4fr 1fr;
+            align-items: center;
+        }
 
         .contact-item {
             display: flex;
@@ -788,54 +727,6 @@
             border-left: 1px solid #96868c;
             padding-left: 73px;
         }
-
-        /* SOCIÁLNÍ SÍTĚ – PC */
-.contact-social {
-    border-left: 1px solid #96868c;
-    padding-left: 25px;
-    gap: 18px;
-}
-
-.contact-social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contact-social-links a {
-    display: block;
-    font-size: 18px;
-    font-weight: 400;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.contact-social-links a:hover {
-    color: #f4d6a5;
-}
-
-/* SOCIÁLNÍ SÍTĚ – TABLET */
-@media (min-width: 521px) and (max-width: 900px) {
-    .contact-social {
-        border-left: none;
-        border-top: 1px solid #96868c;
-        padding: 22px 0 0;
-    }
-}
-
-/* SOCIÁLNÍ SÍTĚ – MOBIL */
-@media (max-width: 520px) {
-    .contact-social {
-        border-left: none;
-        border-top: 1px solid #96868c;
-        padding: 22px 0 0;
-        gap: 24px;
-    }
-
-    .contact-social-links a {
-        font-size: 17px;
-    }
-}
 
         .contact-icon {
             width: 70px;
@@ -877,11 +768,11 @@
         }
 
         .contact-action {
-    border-left: 1px solid #96868c;
-    padding-left: 24px;
-    display: flex;
-    justify-content: flex-start;
-}
+            border-left: 1px solid #96868c;
+            padding-left: 65px;
+            display: flex;
+            justify-content: flex-start;
+        }
 
         .contact-book {
             display: inline-flex;
@@ -1135,17 +1026,14 @@
             }
 
             .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 22px;
-}
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
 
-       .contact-container > .contact-item,
-.contact-container > .contact-action {
+            .contact-item.address,
+.contact-action {
     border-left: none;
     padding-left: 0;
-    padding-right: 0;
 }
 
 .contact-item.address {
@@ -2336,57 +2224,6 @@
 }
 }
 
-/* PC – PŘIROZENÉ ROZLOŽENÍ KONTAKTŮ */
-@media (min-width: 901px) {
-
-    .contact-container {
-        display: flex;
-        align-items: stretch;
-        justify-content: flex-start;
-        gap: 0;
-    }
-
-    .contact-container > .contact-item {
-        flex: 0 0 auto;
-        min-width: 0;
-        padding: 0 16px;
-        gap: 18px;
-    }
-
-    .contact-container > .contact-item:first-child {
-        padding-left: 0;
-    }
-
-    .contact-container > .contact-item:last-child {
-        padding-right: 0;
-    }
-
-    .contact-container > .contact-item:not(:first-child) {
-        border-left: 1px solid #96868c;
-    }
-
-    .contact-container > .contact-item:nth-child(2) {
-    flex: 0 0 auto;
-}
-
-.contact-container > .contact-item:nth-child(3) {
-    flex: 0 0 auto;
-}
-
-.contact-container > .contact-item:nth-child(4) {
-    flex: 1 1 auto;
-}
-
-    .contact-container .contact-icon {
-        flex-shrink: 0;
-    }
-
-    .contact-container .contact-email {
-        overflow-wrap: normal;
-        word-break: normal;
-        white-space: nowrap;
-    }
-}
 
     </style>
 </head>
@@ -3266,27 +3103,7 @@
             <span class="contact-address">Po–Pá 9:00–18:00</span>
 <span class="contact-label" style="display:block">PO TELEFONICKÉ DOHODĚ</span>
         </span>
-       </div>
-</div>
-
-<!-- SOCIÁLNÍ SÍTĚ -->
-<div class="contact-item contact-social">
-    <span class="contact-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="18" cy="5" r="2.5"/>
-            <circle cx="6" cy="12" r="2.5"/>
-            <circle cx="18" cy="19" r="2.5"/>
-            <path d="M8.3 10.8 15.7 6.2M8.3 13.2l7.4 4.6"/>
-        </svg>
-    </span>
-
-    <span class="contact-social-links">
-        <a href="https://www.facebook.com/p/Kosmetika-Salon-Synchro-61561025497949/"
-           target="_blank" rel="noopener noreferrer">Facebook</a>
-
-        <a href="https://www.instagram.com/salon_kosmetika_synchro_/"
-           target="_blank" rel="noopener noreferrer">Instagram</a>
-    </span>
+    </div>
 </div>
 
         </div>
