@@ -712,7 +712,11 @@
     margin: auto;
     padding: 20px 30px;
     display: grid;
-    grid-template-columns: 1.25fr 1.45fr 1fr 0.85fr;
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 1.3fr)
+        minmax(0, 0.85fr)
+        max-content;
     align-items: center;
 }
 
