@@ -1302,6 +1302,36 @@
     padding-bottom: 25px;
     border-bottom: 1px solid #e5d6c4;
 }
+        /* KOSMETIKA – OBRÁZEK INSPIRA – PC */
+@media (min-width: 901px) {
+
+    #detailKosmetika:not([hidden]) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 200px;
+        column-gap: 30px;
+        align-items: center;
+    }
+
+    #detailKosmetika > .detail-intro {
+        min-width: 0;
+    }
+
+    #detailKosmetika > .kosmetika-inspira {
+        width: 100%;
+        text-align: center;
+    }
+
+    #detailKosmetika > .kosmetika-inspira img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #detailKosmetika > :not(.detail-intro):not(.kosmetika-inspira) {
+        grid-column: 1 / -1;
+    }
+}
 
 .detail-intro p {
     font-size: 14px;
@@ -2385,9 +2415,13 @@
         Preferuji hlavně přírodní kosmetiku, pracuji s kosmetikou
         <a href="https://www.janssen-beauty.cz/" target="_blank" rel="noopener noreferrer">Janssen</a>,
         <a href="https://inspira-cosmetics.cz/" target="_blank" rel="noopener noreferrer">Inspira</a>,
-        <a href="https://www.gernetic.cz/" target="_blank" rel="noopener noreferrer">Gernetic</a>.
+                <a href="https://www.gernetic.cz/" target="_blank" rel="noopener noreferrer">Gernetic</a>.
     </strong>
 </p>
+    </div>
+
+    <div class="kosmetika-inspira">
+        <img src="inspira.jpeg" alt="Inspira Med – Exosome Cell Booster Serum" loading="lazy">
     </div>
 
     <h3>Ceník kosmetických služeb</h3>
