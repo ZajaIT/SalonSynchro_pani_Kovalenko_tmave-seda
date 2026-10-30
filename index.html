@@ -2330,11 +2330,21 @@
 }
 }
 
-        /* PC – PŘIROZENÉ ROZLOŽENÍ KONTAKTŮ */
+/* PC – PŘIROZENÉ ROZLOŽENÍ KONTAKTŮ */
 @media (min-width: 901px) {
+
+    .contact-container {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 0;
+    }
+
     .contact-container > .contact-item {
-        padding-left: 24px;
-        padding-right: 24px;
+        flex: 0 1 auto;
+        min-width: 0;
+        padding: 0 16px;
+        gap: 18px;
     }
 
     .contact-container > .contact-item:first-child {
@@ -2344,45 +2354,19 @@
     .contact-container > .contact-item:last-child {
         padding-right: 0;
     }
-}
-
-/* TABLET – KONTAKTY POD SEBOU */
-@media (min-width: 521px) and (max-width: 900px) {
-    .contact-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 22px;
-    }
-
-    .contact-container > .contact-item {
-        padding-left: 0;
-        padding-right: 0;
-    }
 
     .contact-container > .contact-item:not(:first-child) {
-        border-left: none;
-        border-top: 1px solid #96868c;
-        padding-top: 22px;
-    }
-}
-
-/* MOBIL – KONTAKTY POD SEBOU */
-@media (max-width: 520px) {
-    .contact-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 22px;
+        border-left: 1px solid #96868c;
     }
 
-    .contact-container > .contact-item {
-        padding-left: 0;
-        padding-right: 0;
+    .contact-container .contact-icon {
+        flex-shrink: 0;
     }
 
-    .contact-container > .contact-item:not(:first-child) {
-        border-left: none;
-        border-top: 1px solid #96868c;
-        padding-top: 22px;
+    .contact-container .contact-email {
+        overflow-wrap: normal;
+        word-break: normal;
+        white-space: nowrap;
     }
 }
 
