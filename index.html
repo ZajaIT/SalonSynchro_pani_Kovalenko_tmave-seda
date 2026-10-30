@@ -731,8 +731,11 @@
     padding-right: 0;
 }
 
-.contact-container > .contact-item:not(:first-child) {
-    border-left: 1px solid #96868c;
+/* PC – svislé oddělovače */
+@media (min-width: 901px) {
+    .contact-container > .contact-item:not(:first-child) {
+        border-left: 1px solid #96868c;
+    }
 }
 
 .contact-container .contact-icon {
