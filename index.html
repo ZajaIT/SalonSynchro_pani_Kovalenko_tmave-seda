@@ -2040,6 +2040,33 @@
     border: 1px solid #e5d6c4;
 }
 
+/* INTERIÉR – PC */
+
+.gallery-interier-layout {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+}
+
+.gallery-interier-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.gallery-interier-layout img,
+.gallery-interier-layout video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e5d6c4;
+}
+
+.gallery-interier-right video {
+    background: #171316;
+}
+
 
 /* =========================================
    MODAL GALERIE – TABLET (521–900 px)
@@ -2069,6 +2096,16 @@
 .gallery-photo-grid img {
     flex-basis: calc((100% - 15px) / 2);
     width: calc((100% - 15px) / 2);
+}
+
+/* INTERIÉR – TABLET */
+
+.gallery-interier-layout {
+    gap: 15px;
+}
+
+.gallery-interier-left {
+    gap: 15px;
 }
 
     .gallery-modal-description {
@@ -2123,6 +2160,22 @@
 .gallery-photo-grid img {
     flex-basis: 100%;
     width: 100%;
+}
+
+/* INTERIÉR – MOBIL */
+
+.gallery-interier-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.gallery-interier-left {
+    gap: 18px;
+}
+
+.gallery-interier-layout video {
+    width: 100%;
+    height: auto;
 }
 }
 
@@ -2869,13 +2922,29 @@
         <div class="gallery-modal-body">
 
             <!-- PROSTŘEDÍ SALONU -->
-            <div class="gallery-modal-content" id="galleryInterier" hidden>
-                <div class="gallery-photo-grid">
-                    <img src="interier2.webp" alt="Prostředí salonu – fotografie 2" loading="lazy">
-<img src="interier1.webp" alt="Prostředí salonu – fotografie 1" loading="lazy">
-<img src="interier3.webp" alt="Prostředí salonu – fotografie 3" loading="lazy">
-                </div>
-            </div>
+<div class="gallery-modal-content" id="galleryInterier" hidden>
+
+    <div class="gallery-interier-layout">
+
+        <div class="gallery-interier-left">
+            <img src="interier2.webp" alt="Prostředí salonu – fotografie 2" loading="lazy">
+            <img src="interier3.webp" alt="Prostředí salonu – fotografie 3" loading="lazy">
+        </div>
+
+        <div class="gallery-interier-middle">
+            <img src="interier1.webp" alt="Prostředí salonu – fotografie 1" loading="lazy">
+        </div>
+
+        <div class="gallery-interier-right">
+            <video controls playsinline preload="metadata">
+                <source src="video-salon-synchro.mp4" type="video/mp4">
+                Váš prohlížeč nepodporuje přehrávání videa.
+            </video>
+        </div>
+
+    </div>
+
+</div>
 
             <!-- ŠKOLENÍ -->
             <div class="gallery-modal-content" id="gallerySkoleni" hidden>
