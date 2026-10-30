@@ -1302,34 +1302,27 @@
     padding-bottom: 25px;
     border-bottom: 1px solid #e5d6c4;
 }
-        /* KOSMETIKA – OBRÁZEK INSPIRA – PC */
+/* KOSMETIKA – INSPIRA – PC */
 @media (min-width: 901px) {
 
-    #detailKosmetika:not([hidden]) {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 200px;
-        column-gap: 30px;
-        align-items: center;
+    #detailKosmetika {
+        position: relative;
     }
 
-    #detailKosmetika > .detail-intro {
-        min-width: 0;
+    #detailKosmetika .kosmetika-inspira {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 200px;
+        transform: translateY(360px);
+        z-index: 1;
     }
 
-    #detailKosmetika > .kosmetika-inspira {
-        width: 100%;
-        text-align: center;
-    }
-
-    #detailKosmetika > .kosmetika-inspira img {
+    #detailKosmetika .kosmetika-inspira img {
         display: block;
         width: 100%;
         height: auto;
         object-fit: contain;
-    }
-
-    #detailKosmetika > :not(.detail-intro):not(.kosmetika-inspira) {
-        grid-column: 1 / -1;
     }
 }
 
