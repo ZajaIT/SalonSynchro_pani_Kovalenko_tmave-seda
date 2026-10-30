@@ -1049,26 +1049,33 @@
             }
 
             .contact-container {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 25px 30px;
+}
 
-            .contact-item.address,
-.contact-action {
+.contact-container > .contact-item {
+    width: 100%;
+    min-height: 0;
+    padding: 20px 0;
+    gap: 24px;
+}
+
+.contact-container > .contact-item:not(:first-child) {
     border-left: none;
+    border-top: 1px solid #96868c;
     padding-left: 0;
 }
 
-.contact-item.address {
-    border-top: 1px solid #96868c;
-    padding-top: 22px;
+.contact-container > .contact-item:first-child {
+    padding-top: 0;
 }
 
-.contact-action {
-    border-top: 1px solid #96868c;
-    padding-top: 22px;
+.contact-container > .contact-item:last-child {
+    padding-bottom: 0;
 }
-
             .contact-action {
                 justify-content: flex-start;
             }
@@ -1137,6 +1144,34 @@
             .contact-phone {
                 font-size: 21px;
             }
+
+            .contact-container {
+    padding: 20px 22px;
+}
+
+.contact-container > .contact-item {
+    gap: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.contact-icon {
+    width: 58px;
+    height: 58px;
+}
+
+.contact-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.contact-address {
+    font-size: 16px;
+}
+
+.contact-social-links a {
+    font-size: 16px;
+}
         }
 
 /* FOOTER */
