@@ -706,14 +706,14 @@
     align-items: center;
 }
 
-        .contact-container {
+       .contact-container {
     max-width: 1500px;
     width: 100%;
     margin: auto;
     padding: 20px 30px;
-    display: grid;
-    grid-template-columns: 1.2fr 1.1fr 1fr 0.85fr;
-    align-items: center;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
         .contact-item {
@@ -725,7 +725,6 @@
 
         .contact-item.address {
     border-left: 1px solid #96868c;
-    padding-left: 24px;
 }
 
         .contact-icon {
@@ -769,14 +768,25 @@
 
         .contact-action {
     border-left: 1px solid #96868c;
-    padding-left: 24px;
     display: flex;
     justify-content: flex-start;
 }
 
-        .contact-social {
-    border-left: 1px solid #96868c;
-    padding-left: 24px;
+        /* PC – jednotné mezery všech kontaktních údajů */
+@media (min-width: 901px) {
+    .contact-container > .contact-item {
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+
+    .contact-container > .contact-item:not(:first-child) {
+        border-left: 1px solid #96868c;
+        padding-left: 24px;
+    }
+
+    .contact-container > .contact-item:first-child {
+        padding-left: 0;
+    }
 }
 
 .contact-social-links {
@@ -850,14 +860,6 @@
             .service-content h2 {
                 font-size: 25px;
             }
-
-           .contact-item.address {
-    padding-left: 24px;
-}
-
-.contact-action {
-    padding-left: 24px;
-}
         }
 
         /* MOBILNÍ ZÁKLAD – DETAILNĚ DOLADÍME PO PC */
@@ -3112,8 +3114,7 @@
                 </span>
             </a>
 
-            <div class="contact-action">
-    <div class="contact-item">
+           <div class="contact-item contact-action">
         <span class="contact-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="9"/>
@@ -3125,7 +3126,6 @@
 <span class="contact-label" style="display:block">PO TELEFONICKÉ DOHODĚ</span>
         </span>
     </div>
-</div>
 
                     <!-- SOCIÁLNÍ SÍTĚ -->
             <div class="contact-item contact-social">
