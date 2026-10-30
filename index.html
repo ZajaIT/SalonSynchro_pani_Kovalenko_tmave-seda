@@ -1489,9 +1489,9 @@
     display: none;
 }
 
-        /* PC */
+       /* PC */
 .masaze-mobile-break {
-    display: inline;
+    display: block;
 }
 
 /* TABLET */
@@ -1693,6 +1693,10 @@
 @media (max-width: 520px) {
     .service-modal-header h2 {
         font-size: 29px;
+    }
+
+    .service-modal-header .modal-masaze-break {
+        display: block;
     }
 
     .service-detail > h3 {
@@ -2444,7 +2448,7 @@
         <!-- MASÁŽE -->
 <div class="service-detail" id="detailMasaze" hidden>
 
-    <h2>Masáže a baňkování</h2>
+    <h2>Masáže <span class="modal-masaze-break">a baňkování</span></h2>
 
     <div class="service-price-list">
 
@@ -3038,8 +3042,8 @@ if (card.classList.contains("kosmetika")) {
 const modalTitle = document.getElementById("serviceModalTitle");
 const activeDetail = modal.querySelector(".service-detail:not([hidden])");
 
-modalTitle.textContent = activeDetail
-    ? activeDetail.querySelector("h2").textContent
+modalTitle.innerHTML = activeDetail
+    ? activeDetail.querySelector("h2").innerHTML
     : "";
 
 modal.classList.add("active");
