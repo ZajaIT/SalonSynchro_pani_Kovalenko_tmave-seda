@@ -2336,12 +2336,12 @@
     .contact-container {
         display: flex;
         align-items: stretch;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 0;
     }
 
     .contact-container > .contact-item {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
         min-width: 0;
         padding: 0 16px;
         gap: 18px;
@@ -2357,6 +2357,10 @@
 
     .contact-container > .contact-item:not(:first-child) {
         border-left: 1px solid #96868c;
+    }
+
+    .contact-container > .contact-item:nth-child(2) {
+        flex: 1 1 auto;
     }
 
     .contact-container .contact-icon {
