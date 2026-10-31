@@ -2283,6 +2283,111 @@
 }
 
 
+/* =========================================
+   PIGMENTACE PLETI – PC
+========================================= */
+
+.pigmentace-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e5d6c4;
+}
+
+.pigmentace-section h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    color: #171316;
+    margin-bottom: 25px;
+}
+
+.pigmentace-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.pigmentace-grid figure {
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.pigmentace-grid figcaption {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #b78645;
+    margin-bottom: 12px;
+}
+
+.pigmentace-grid img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    background: #f3ede6;
+    border: 1px solid #e5d6c4;
+}
+
+
+/* =========================================
+   PIGMENTACE PLETI – TABLET
+   521 až 900 px
+========================================= */
+
+@media (min-width: 521px) and (max-width: 900px) {
+
+    .pigmentace-section h3 {
+        font-size: 20px;
+    }
+
+    .pigmentace-grid {
+        gap: 18px;
+    }
+
+    .pigmentace-grid img {
+        height: 300px;
+    }
+}
+
+
+/* =========================================
+   PIGMENTACE PLETI – MOBIL
+   do 520 px
+========================================= */
+
+@media (max-width: 520px) {
+
+    .pigmentace-section {
+        margin-top: 30px;
+        padding-top: 25px;
+    }
+
+    .pigmentace-section h3 {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .pigmentace-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .pigmentace-grid img {
+        height: auto;
+        max-height: 450px;
+        object-fit: contain;
+    }
+
+    .pigmentace-grid figcaption {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+}
+
     </style>
 </head>
 
@@ -3094,14 +3199,50 @@
 </div>
             </div>
 
-            <!-- VÝSLEDKY OŠETŘENÍ -->
-            <div class="gallery-modal-content" id="galleryVysledky" hidden>
-                <div class="gallery-photo-grid">
-                    <img src="citliva-plet.jpg" alt="Výsledky ošetření – citlivá pleť" loading="lazy">
-                    <img src="vrasky.jpg" alt="Výsledky ošetření – vrásky" loading="lazy">
-                    <img src="akne.jpg" alt="Výsledky ošetření – akné" loading="lazy">
-                </div>
-            </div>
+            
+<!-- VÝSLEDKY OŠETŘENÍ -->
+<div class="gallery-modal-content" id="galleryVysledky" hidden>
+
+    <!-- PŮVODNÍ FOTOGRAFIE -->
+    <div class="gallery-photo-grid">
+        <img src="citliva-plet.jpg" alt="Výsledky ošetření – citlivá pleť" loading="lazy">
+        <img src="vrasky.jpg" alt="Výsledky ošetření – vrásky" loading="lazy">
+        <img src="akne.jpg" alt="Výsledky ošetření – akné" loading="lazy">
+    </div>
+
+    <!-- PIGMENTACE PLETI -->
+    <div class="pigmentace-section">
+
+        <h3>Pigmentace pleti – před ošetřením a po roce péče</h3>
+
+        <div class="pigmentace-grid">
+
+            <figure>
+                <figcaption>PŘED</figcaption>
+                <img src="pred1.jpeg" alt="Pigmentace pleti před ošetřením" loading="lazy">
+            </figure>
+
+            <figure>
+                <figcaption>PO ROCE</figcaption>
+                <img src="po1.jpeg" alt="Pleť po roce péče – první porovnání" loading="lazy">
+            </figure>
+
+            <figure>
+                <figcaption>PŘED</figcaption>
+                <img src="pred2.jpeg" alt="Pigmentace pleti před ošetřením – druhé porovnání" loading="lazy">
+            </figure>
+
+            <figure>
+                <figcaption>PO ROCE</figcaption>
+                <img src="po2.jpeg" alt="Pleť po roce péče – druhé porovnání" loading="lazy">
+            </figure>
+
+        </div>
+
+    </div>
+
+</div>
+
 
         </div>
     </div>
