@@ -2388,6 +2388,39 @@
         margin-bottom: 10px;
     }
 }
+        
+/* ZRALÁ PLEŤ – PC */
+@media (min-width: 901px) {
+    .zrala-plet-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 125px;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .zrala-plet-text {
+        min-width: 0;
+    }
+
+    .zrala-plet-image {
+        display: block;
+        width: 100%;
+        max-height: 160px;
+        object-fit: contain;
+    }
+}
+
+/* ZRALÁ PLEŤ – TABLET A MOBIL */
+@media (max-width: 900px) {
+    .zrala-plet-item {
+        display: block;
+    }
+
+    .zrala-plet-image {
+        display: none;
+    }
+}
+
 
     </style>
 </head>
@@ -2632,12 +2665,20 @@
             <div class="service-price">1 h 20 min · 1 250 - 1 350 Kč</div>
         </div>
 
-        <div class="service-price-item">
-    <h3>Zralá pleť</h3>
-            <p>Zralá pleť se začíná projevovat přibližně kolem 40. roku věku a výše. Dochází k tvorbě vrásek, změnám elasticity a zvýšeným sklonům k vysoušení.</p>
-<p>Používám přípravky s aktivními látkami: stimulující peptidy, kmenové buňky, mořský kolagen, japonské hedvábí a MATRIXYL SYNTHE 6.</p>
-    <div class="service-price">1 h 30 min · 1 390 – 1 450 Kč</div>
+        
+<div class="service-price-item zrala-plet-item">
+
+    <div class="zrala-plet-text">
+        <h3>Zralá pleť</h3>
+        <p>Zralá pleť se začíná projevovat přibližně kolem 40. roku věku a výše. Dochází k tvorbě vrásek, změnám elasticity a zvýšeným sklonům k vysoušení.</p>
+        <p>Používám přípravky s aktivními látkami: stimulující peptidy, kmenové buňky, mořský kolagen, japonské hedvábí a MATRIXYL SYNTHE 6.</p>
+        <div class="service-price">1 h 30 min · 1 390 – 1 450 Kč</div>
+    </div>
+
+    <img src="matrixyl.png" class="zrala-plet-image" alt="Inspira Absolute sérum" loading="lazy">
+
 </div>
+
         
         <div class="service-price-item">
     <h3>Vyhořelá pleť</h3>
