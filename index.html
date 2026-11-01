@@ -1174,6 +1174,143 @@
 }
         }
 
+        
+/* =========================================
+   DÁRKOVÉ POUKAZY – PC
+========================================= */
+
+.gift-section {
+    background: linear-gradient(
+        110deg,
+        #303030 0%,
+        #424242 50%,
+        #303030 100%
+    );
+    padding: 65px 24px;
+}
+
+.gift-container {
+    max-width: 1190px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.gift-content h2 {
+    color: #f4d6a5;
+    font-size: 43px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.gift-line {
+    width: 70px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin: 22px 0 28px;
+}
+
+.gift-lead {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.gift-description {
+    color: #eee3e9;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+.gift-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   DÁRKOVÉ POUKAZY – TABLET (521–900 px)
+========================================= */
+
+@media (min-width: 521px) and (max-width: 900px) {
+    .gift-section {
+        padding: 50px 25px;
+    }
+
+    .gift-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .gift-content h2 {
+        font-size: 32px;
+    }
+
+    .gift-line {
+        margin: 18px 0 22px;
+    }
+
+    .gift-lead {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .gift-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================================
+   DÁRKOVÉ POUKAZY – MOBIL (do 520 px)
+========================================= */
+
+@media (max-width: 520px) {
+    .gift-section {
+        padding: 45px 22px;
+    }
+
+    .gift-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .gift-content {
+        text-align: center;
+    }
+
+    .gift-content h2 {
+        font-size: 32px;
+    }
+
+    .gift-line {
+        margin: 18px auto 25px;
+    }
+
+    .gift-lead {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .gift-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .gift-image {
+        width: 100%;
+    }
+}
+
+
 /* FOOTER */
 
 .footer {
@@ -3145,6 +3282,31 @@
     </div>
 </section>
 
+
+<!-- DÁRKOVÉ POUKAZY -->
+<section class="gift-section" id="poukazy">
+    <div class="gift-container">
+
+        <div class="gift-content">
+            <h2>Dárkové poukazy</h2>
+            <div class="gift-line"></div>
+
+            <p class="gift-lead">
+                Darujte svým blízkým chvíle odpočinku a péče.
+            </p>
+
+            <p class="gift-description">
+                Potěšte své blízké dárkovým poukazem na kosmetickou péči,
+                masáže nebo další ošetření v Salonu Synchro.
+            </p>
+        </div>
+
+        <div class="gift-image">
+            <img src="poukaz.webp" alt="Dárkový poukaz Salon Synchro – Janssen Cosmetics" loading="lazy">
+        </div>
+
+    </div>
+</section>
 
     
 <!-- GALERIE -->
