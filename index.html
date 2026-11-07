@@ -471,6 +471,32 @@
     color: #171316;
     margin-bottom: 8px;
 }
+        /* NOVINKY – OBRÁZEK POUZE PRO MOBIL */
+
+.news-image-mobile {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .news-container > .news-image {
+        display: none;
+    }
+
+    .news-image-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 18px;
+    }
+
+    .news-image-mobile img {
+        display: block;
+        width: 100%;
+        max-width: 190px;
+        height: auto;
+        object-fit: contain;
+    }
+}
 
 
 /* NOVINKY – TABLET */
@@ -3589,6 +3615,14 @@
             <span class="news-label">NOVINKY V SALONU</span>
 
             <h2>Exosomy</h2>
+
+<div class="news-image-mobile">
+    <img src="exosome1.webp"
+         alt="Inspira Med Exosome Cell Booster Cream"
+         loading="lazy">
+</div>
+
+<div class="news-line"></div>
 
             <div class="news-line"></div>
 
