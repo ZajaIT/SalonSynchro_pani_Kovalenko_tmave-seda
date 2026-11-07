@@ -471,31 +471,10 @@
     color: #171316;
     margin-bottom: 8px;
 }
-        /* NOVINKY – OBRÁZEK POUZE PRO MOBIL */
+       /* NOVINKY – MOBILNÍ DUPLIKÁT OBRÁZKU */
 
 .news-image-mobile {
     display: none;
-}
-
-@media (max-width: 650px) {
-    .news-container > .news-image {
-        display: none;
-    }
-
-    .news-image-mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0 18px;
-    }
-
-    .news-image-mobile img {
-        display: block;
-        width: 100%;
-        max-width: 190px;
-        height: auto;
-        object-fit: contain;
-    }
 }
 
 
@@ -546,6 +525,25 @@
 
 /* NOVINKY – MOBIL */
 @media (max-width: 650px) {
+
+        .news-container > .news-image {
+        display: none;
+    }
+
+    .news-image-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 18px;
+    }
+
+    .news-image-mobile img {
+        display: block;
+        width: 100%;
+        max-width: 190px;
+        height: auto;
+        object-fit: contain;
+    }
     .news-section {
         padding: 30px 20px 35px;
     }
@@ -3623,8 +3621,6 @@
 </div>
 
 <div class="news-line"></div>
-
-            <div class="news-line"></div>
 
             <h3>Nová generace regenerační péče</h3>
 
