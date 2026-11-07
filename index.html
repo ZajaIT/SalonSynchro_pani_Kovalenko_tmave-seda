@@ -382,23 +382,24 @@
     font-weight: 700;
 }
         
+
 /* =========================
    NOVINKY – EXOSOMY
 ========================= */
 
 .news-section {
     background: #fbf8f4;
-    padding: 75px 40px;
+    padding: 40px 40px;
     overflow: hidden;
 }
 
 .news-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 42% 1fr;
+    grid-template-columns: 34% 1fr;
     align-items: center;
-    gap: 75px;
+    gap: 55px;
 }
 
 .news-image {
@@ -410,7 +411,7 @@
 .news-image img {
     display: block;
     width: 100%;
-    max-width: 390px;
+    max-width: 290px;
     height: auto;
     object-fit: contain;
 }
@@ -421,26 +422,26 @@
 
 .news-label {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: #b78645;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 .news-content h2 {
-    font-family: 'Italiana', serif;
-    font-size: clamp(48px, 5vw, 72px);
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(34px, 3.5vw, 46px);
     font-weight: 400;
-    line-height: 1.1;
-    margin: 0 0 22px;
+    line-height: 1.2;
+    margin: 0 0 12px;
 }
 
 .news-line {
-    width: 90px;
+    width: 80px;
     height: 2px;
-    margin-bottom: 26px;
+    margin-bottom: 16px;
     background: linear-gradient(
         90deg,
         #b78645,
@@ -450,25 +451,83 @@
 }
 
 .news-content h3 {
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .news-content p {
-    font-size: 17px;
-    line-height: 1.85;
+    font-size: 16px;
+    line-height: 1.65;
     color: #514b4d;
     margin-bottom: 0;
 }
 
 .news-content .news-lead {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
     color: #171316;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
+
+/* NOVINKY – TABLET */
+@media (max-width: 900px) {
+    .news-section {
+        padding: 40px 25px;
+    }
+
+    .news-container {
+        grid-template-columns: 35% 1fr;
+        gap: 25px;
+    }
+
+    .news-content h2 {
+        font-size: 36px;
+    }
+}
+
+/* NOVINKY – MOBIL */
+@media (max-width: 650px) {
+    .news-section {
+        padding: 40px 20px;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .news-image img {
+        max-width: 230px;
+    }
+
+    .news-content {
+        text-align: center;
+    }
+
+    .news-content h2 {
+        font-size: 36px;
+    }
+
+    .news-line {
+        margin: 0 auto 16px;
+    }
+
+    .news-content h3 {
+        font-size: 18px;
+    }
+
+    .news-content p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .news-content .news-lead {
+        font-size: 16px;
+    }
+}
+
 
 /* NOVINKY – TABLET */
 @media (max-width: 900px) {
