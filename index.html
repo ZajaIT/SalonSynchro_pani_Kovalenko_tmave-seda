@@ -2557,7 +2557,86 @@
         display: none;
     }
 }
+        
+/* =====================================
+   JEMNÉ NAJÍŽDĚCÍ ANIMACE WEBU
+===================================== */
 
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* HERO – PLYNULÉ OBJEVENÍ FOTKY */
+
+@keyframes heroImageFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .hero {
+        animation: heroImageFade 1.2s ease-out both;
+    }
+
+    .hero-content {
+        animation: heroFadeIn 0.9s ease-out 0.35s both;
+    }
+
+}
+
+/* ANIMACE PŘI SCROLLOVÁNÍ */
+@media (prefers-reduced-motion: no-preference) {
+    .js-reveal-ready .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+    }
+
+    .js-reveal-ready .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .js-reveal-ready .reveal-delay-1 {
+        transition-delay: 0.12s;
+    }
+
+    .js-reveal-ready .reveal-delay-2 {
+        transition-delay: 0.24s;
+    }
+
+    .js-reveal-ready .reveal-delay-3 {
+        transition-delay: 0.36s;
+    }
+}
+
+/* OMEZENÍ ANIMACÍ */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .hero-content {
+        animation: none !important;
+    }
+}
 
     </style>
 </head>
@@ -3800,6 +3879,48 @@ document.addEventListener("keydown", function (event) {
 });
 
 </script>
+    
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const selectors = [
+        ".benefits-strip-item",
+        ".service-card",
+        ".about-heading",
+        ".about-content",
+        ".gift-content",
+        ".gift-image",
+        ".gallery-heading",
+        ".gallery-card",
+        ".contact-item"
+    ];
+
+    const elements = document.querySelectorAll(
+        selectors.join(", ")
+    );
+
+    if (!("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -20px 0px"
+    });
+
+    elements.forEach(element => {
+        element.classList.add("reveal");
+        observer.observe(element);
+    });
+
+    document.documentElement.classList.add("js-reveal-ready");
+});
+</script>
+
 
 </body>
 </html>
