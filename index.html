@@ -472,120 +472,101 @@
     margin-bottom: 8px;
 }
 
-/* NOVINKY – TABLET */
-@media (max-width: 900px) {
-    .news-section {
-        padding: 40px 25px;
-    }
-
-    .news-container {
-        grid-template-columns: 35% 1fr;
-        gap: 25px;
-    }
-
-    .news-content h2 {
-        font-size: 36px;
-    }
-}
-
-/* NOVINKY – MOBIL */
-@media (max-width: 650px) {
-    .news-section {
-        padding: 40px 20px;
-    }
-
-    .news-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .news-image img {
-        max-width: 230px;
-    }
-
-    .news-content {
-        text-align: center;
-    }
-
-    .news-content h2 {
-        font-size: 36px;
-    }
-
-    .news-line {
-        margin: 0 auto 16px;
-    }
-
-    .news-content h3 {
-        font-size: 18px;
-    }
-
-    .news-content p {
-        font-size: 15px;
-        line-height: 1.65;
-    }
-
-    .news-content .news-lead {
-        font-size: 16px;
-    }
-}
-
 
 /* NOVINKY – TABLET */
-@media (max-width: 900px) {
+@media (min-width: 651px) and (max-width: 900px) {
     .news-section {
-        padding: 60px 30px;
+        padding: 30px 25px;
     }
 
     .news-container {
-        grid-template-columns: 38% 1fr;
-        gap: 35px;
-    }
-
-    .news-content h3 {
-        font-size: 20px;
-    }
-}
-
-/* NOVINKY – MOBIL */
-@media (max-width: 650px) {
-    .news-section {
-        padding: 55px 22px 60px;
-    }
-
-    .news-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 32% 1fr;
         gap: 25px;
     }
 
     .news-image img {
-        max-width: 280px;
+        max-width: 220px;
     }
 
-    .news-content {
-        text-align: center;
+    .news-label {
+        font-size: 11px;
+        margin-bottom: 6px;
     }
 
     .news-content h2 {
-        font-size: 52px;
+        font-size: 34px;
+        margin-bottom: 10px;
     }
 
     .news-line {
-        margin: 0 auto 24px;
+        margin-bottom: 12px;
     }
 
     .news-content h3 {
-        font-size: 20px;
-    }
-
-    .news-content p {
-        font-size: 16px;
-        line-height: 1.75;
-    }
-
-    .news-content .news-lead {
         font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .news-content .news-lead {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .news-content p {
+        font-size: 14px;
+        line-height: 1.6;
     }
 }
+
+/* NOVINKY – MOBIL */
+@media (max-width: 650px) {
+    .news-section {
+        padding: 30px 20px 35px;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .news-image img {
+        max-width: 190px;
+    }
+
+    .news-content {
+        text-align: center;
+    }
+
+    .news-label {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+
+    .news-content h2 {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .news-line {
+        margin: 0 auto 12px;
+    }
+
+    .news-content h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .news-content .news-lead {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .news-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
 
 
 /* TABLET */
