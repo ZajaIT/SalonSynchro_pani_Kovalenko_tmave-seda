@@ -1994,7 +1994,7 @@
 
 .gallery-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
 }
 
@@ -3418,6 +3418,14 @@
                 <span class="gallery-card-arrow" aria-hidden="true">→</span>
             </button>
 
+            
+<button class="gallery-card" type="button" data-gallery="masky">
+    <span class="gallery-card-number">04</span>
+    <h3>Masky</h3>
+    <span class="gallery-card-arrow" aria-hidden="true">→</span>
+</button>
+
+
         </div>
     </div>
 </section>
@@ -3525,19 +3533,30 @@
         <img src="pred2.jpeg" alt="Pleť po roce péče – druhé porovnání" loading="lazy">
     </figure>
 
+
 </div>
 
     </div>
 
 </div>
 
+<!-- MASKY -->
+<div class="gallery-modal-content" id="galleryMasky" hidden>
+    <div class="gallery-photo-grid">
+        <img src="maska1.webp" alt="Kosmetická maska – fotografie 1" loading="lazy">
+        <img src="maska2.webp" alt="Kosmetická maska – fotografie 2" loading="lazy">
+        <img src="maska3.webp" alt="Kosmetická maska – fotografie 3" loading="lazy">
+        <img src="maska4.webp" alt="Kosmetická maska – fotografie 4" loading="lazy">
+        <img src="maska5.webp" alt="Kosmetická maska – fotografie 5" loading="lazy">
+    </div>
+</div>
 
         </div>
     </div>
 </div>
 
-
 </main>
+
 
 <!-- KONTAKTNÍ PRUH -->
 
@@ -3796,6 +3815,7 @@ const galleryClose = galleryModal.querySelector(".gallery-modal-close");
 const galleryTitle = document.getElementById("galleryModalTitle");
 const galleryBody = galleryModal.querySelector(".gallery-modal-body");
 
+
 const galleryGroups = {
     interier: {
         title: "Prostředí salonu",
@@ -3808,8 +3828,13 @@ const galleryGroups = {
     vysledky: {
         title: "Výsledky ošetření",
         content: "galleryVysledky"
+    },
+    masky: {
+        title: "Masky",
+        content: "galleryMasky"
     }
 };
+
 
 let galleryPreviousFocus = null;
 
